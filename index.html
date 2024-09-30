@@ -17,6 +17,11 @@
     <meta property="og:site_name" content="Portfólio Roberto Eduardo Melara" />
     <meta property="og:locale" content="pt_BR" />
     <title>Meu Portfólio</title>
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+  />
+  
     <link rel="stylesheet" href="global.css" />
     <link rel="stylesheet" href="header.css" />
     <link rel="stylesheet" href="article.css" />
@@ -26,6 +31,7 @@
     <link rel="stylesheet" href="itensgirando.css" />
     <link rel="stylesheet" href="responsividade.css" />
     <link rel="stylesheet" href="slide.css" />
+    <link rel="stylesheet" href="slideswiper.css" />
   </head>
   <body>
     <div class="preloader">
@@ -497,58 +503,110 @@
 
       <br /><br /><br />
 
-      <section id="proje">
-        <h2>Projetos</h2>
-        <h4 class="clconhecer">(Clique para conhecer)</h4>
-        <br /><br /><br /><br /><br /><br />
-        <div class="contem_coisa_gira_de">
-          <div class="contem_coisa_gira_dd">
-            <div class="rotating-thing">
-              <div class="item">
-                <a
+     
+      <section id="proje" class="section section-lg">
+        <div class="container">
+          <div class="row justify-content-center text-center">
+            <div class="col-md-9 col-lg-7 wow-outer">
+              <div class="wow slideInDown"></div>
+            </div>
+          </div>
+          <div class="row row-50 centralizar">
+            <section id="tranding">
+              <div class="containerx"></div>
+              <div class="containerx">
+                <h3 style="font-size: 40px;">Projetos</h3>
+                <div class="swiper tranding-slider">
+                  <br />
+                  <div class="tranding-slider-control">
+                    <div class="swiper-button-prev slider-arrow">
+                      <ion-icon name="arrow-back-outline"></ion-icon>
+                    </div>
+                    <div class="swiper-button-next slider-arrow">
+                      <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+                  <div class="swiper-wrapper">
+                    <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                      <div class="tranding-slide-img">
+                        <a
                   href="https://controle-de-despezasversaosimples.vercel.app/"
                   target="_blank"
                 >
-                  <img src="/imgs/imgcontrolefinanceiro.png" alt="" />
-                  <p>Controle financeiro</p>
+                  <img height="100px" width="300px" src="/imgs/imgcontrolefinanceiro.png" alt="" />
                 </a>
+                      </div>
+                      <div class="tranding-slide-content">
+                        <div class="tranding-slide-content-bottom"></div>
+                      </div>
+                    </div>
+                    <!-- Slide-end -->
+                    <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                      <div class="tranding-slide-img">
+                        <a
+                        href="https://odontoesteticaversaosimples.vercel.app/"
+                        target="_blank"
+                      >
+                        <img height="100px" width="300px" src="/imgs/clinicaodontoesteticasite.jpg" alt="" />
+                      </a>
+                      </div>
+                      <div class="tranding-slide-content">
+                        <div class="tranding-slide-content-bottom"></div>
+                      </div>
+                    </div>
+                    <!-- Slide-end -->
+                    <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                      <div class="tranding-slide-img">
+                        <a href="https://projeto-araya.vercel.app/" target="_blank">
+                          <img height="100px" width="300px" src="/imgs/imghospproj3.jpg" alt="" />
+                        </a>
+                      </div>
+                      <div class="tranding-slide-content">
+                        <div class="tranding-slide-content-bottom"></div>
+                      </div>
+                    </div>
+                    <!-- Slide-end -->
+                    <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                      <div class="tranding-slide-img">
+                        <a href="https://henfil.com.br/" target="_blank">
+                          <img height="100px" width="300px" src="/imgs/institutohenfil.jpg" alt="" />
+                        </a>
+                      </div>
+                      <div class="tranding-slide-content">
+                        <div class="tranding-slide-content-bottom"></div>
+                      </div>
+                    </div>
+                    <!-- Slide-end -->
+                    <!-- Slide-start -->
+                    <div class="swiper-slide tranding-slide">
+                      <div class="tranding-slide-img">
+                        <a href="" id="linkhamburgeria">
+                          <img height="100px" width="300px" src="/imgs/hamburgerblaide.jpg" alt="" />
+                        </a>
+                      </div>
+                      <div class="tranding-slide-content">
+                        <div class="tranding-slide-content-bottom"></div>
+                      </div>
+                    </div>
+                  
+                      <div class="tranding-slide-content">
+                        <div class="tranding-slide-content-bottom"></div>
+                      </div>
+                    </div>
+
+                    <!-- Slide-end -->
+                  </div>
+                </div>
               </div>
-              <div class="item">
-                <a
-                  href="https://odontoesteticaversaosimples.vercel.app/"
-                  target="_blank"
-                >
-                  <img src="/imgs/clinicaodontoesteticasite.jpg" alt="" />
-                  <p>Site institucional odonto e estética</p>
-                </a>
-              </div>
-              <div class="item">
-                <a href="#" id="linkhamburgeria">
-                  <img src="/imgs/hamburgerblaide.jpg" alt="" />
-                  <p>Hamburgeria Blade</p>
-                </a>
-              </div>
-              <div class="item">
-                <a href="https://projeto-araya.vercel.app/" target="_blank">
-                  <img src="/imgs/imghospproj3.jpg" alt="" />
-                  <p>Projeto de atendimento</p>
-                </a>
-              </div>
-              <div class="item">
-                <a href="https://henfil.com.br/" target="_blank">
-                  <img src="/imgs/institutohenfil.jpg" alt="" />
-                  <p>Instituto Henfil</p>
-                </a>
-              </div>
-            </div>
-            <div class="controls">
-              <button class="control-button" id="left-button">⟲</button>
-              <button class="control-button" id="right-button">⟳</button>
-            </div>
+            </section>
           </div>
         </div>
       </section>
-
       <section id="form">
         <br />
         <h2 class="formcor">Formação</h2>
@@ -695,6 +753,13 @@
     </div>
 </article>
       </footer>
+      <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="/slideswiper.js"></script>
       <script src="/tecnologias.js"></script>
       <script src="/colapsavel.js"></script>
       <script src="/mensagens.js"></script>
@@ -703,6 +768,16 @@
       <script src="/msgcopia.js"></script>
       <script src="/itensgirando.js"></script>
       <script src="/mododark.js"></script>
-      <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    
+      <script>
+        document.querySelectorAll('.swiper-slide').forEach(slide => {
+    slide.addEventListener('click', function(e) {
+        let link = slide.querySelector('a');
+        if (link) {
+            window.location.href = link.href;
+        }
+    });
+});
+      </script>
   </body>
 </html>

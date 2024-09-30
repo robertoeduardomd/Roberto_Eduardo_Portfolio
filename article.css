@@ -265,6 +265,7 @@ p {
 }
 
 .tgtextimg {
+    font-size: 14px;
     text-align: right;
     display: flex;
     flex-direction: row;
@@ -301,17 +302,18 @@ p {
 }
 
 .tecnop ul li {
+    font-size: 14px;
     display: inline-block;
     color: white;
     border: 0.5px solid white;
     border-radius: 30px;
-    padding: 20px;
+    padding: 10px;
     cursor: url(../public/imgs/neonpointer.cur), default;
     letter-spacing: 2px;
 }
 
 .tecnop ul li:hover {
-    font-weight: bolder;
+
     color: rgb(1, 221, 118);
     border: 2px solid rgb(1, 221, 118);
 }
@@ -412,6 +414,7 @@ p {
 }
 
 .experiencias {
+    font-size: 14px;
     margin-top: 100px;
     text-align: center;
     margin: 2px;
@@ -434,6 +437,7 @@ p {
 }
 
 .experiencias .colapsador .label {
+    font-size: 16px;
     position: relative;
     padding: 20px;
     background: linear-gradient(45deg, black, rgb(5, 5, 87), black);
@@ -475,6 +479,7 @@ p {
 }
 
 .experiencias .colapsador .conteudocolapsador p {
+    font-size: 14px;
     color: black;
     text-align: justify;
 }
