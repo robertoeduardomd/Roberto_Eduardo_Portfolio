@@ -1,0 +1,123 @@
+footer {
+    z-index: 7;
+    background-color: rgba(0, 0, 0, 0.863);
+    backdrop-filter: blur(5px);
+
+    width: 100%;
+    height: auto;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 20px;
+    flex-direction: row;
+    gap: 50px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+footer p {
+    color: white;
+}
+
+.ctt,
+.redessociais,
+.funcionamento {
+    height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.redessociais ul {
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    list-style-type: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-direction: row;
+}
+
+.redessociais ul li {
+    color: white;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.5s linear;
+    cursor: url(../public/imgs/neonlinkselect.cur), pointer;
+    overflow: hidden;
+}
+
+.redessociais ul li:hover {
+    width: 180px;
+    box-shadow: 0.2px 1px 10px rgb(255, 255, 255);
+}
+
+.redessociais ul li .icon {
+    color: rgb(1, 221, 118);
+    font-size: 1.5em;
+    transition: all 0.1s linear;
+}
+
+.redessociais ul li .text {
+    cursor: pointer;
+    transform: scale(0);
+    transition: all 0.1s linear;
+    position: absolute;
+}
+
+.redessociais ul li:hover .text {
+    transform: scale(1);
+}
+
+.redessociais ul li:hover .icon {
+    transform: scale(0);
+
+}
+
+.redessociais ul li span {
+    position: absolute;
+}
+
+.redessociais ul li::before {
+    content: '';
+    position: absolute;
+    background-image: linear-gradient(45deg, var(--cor1), var(--cor2));
+    inset: 0;
+    opacity: 0;
+    border-radius: 60px;
+}
+
+.redessociais ul li:hover::before {
+    opacity: 1;
+}
+
+footer h3 {
+    font-size: 50px;
+
+}
+
+footer h4 {
+    color: rgb(1, 221, 118);
+    font-size: 30px;
+    font-family: sans-serif;
+    padding-bottom: 10px;
+
+}
+
+.funcionamento>p {
+    display: block;
+
+}

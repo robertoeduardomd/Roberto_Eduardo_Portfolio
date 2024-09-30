@@ -1,0 +1,163 @@
+.contem_coisa_gira_de {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    background: linear-gradient(150deg, transparent, transparent, transparent, transparent, transparent, transparent, black, black, black, black);
+
+    display: flex;
+    align-items: end;
+    justify-content: center;
+
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    border-radius: 100px;
+
+}
+
+.contem_coisa_gira_dd {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    background: linear-gradient(210deg, transparent, transparent, transparent, transparent, transparent, transparent, black, black, black, black);
+
+    display: flex;
+    align-items: end;
+    justify-content: center;
+
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    border-radius: 100px;
+
+}
+
+
+.rotating-thing {
+    margin-top: 120px;
+    --size: 420vmin;
+    --carousel-radius: calc(.2 * var(--size));
+    --item-radius: calc(.4* var(--carousel-radius));
+    --pi: 3.1416;
+    --n: 5;
+    --delta: 0;
+
+
+    height: 400%;
+    width: 102%;
+    position: absolute;
+    top: 57.4%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    clip-path: polygon(100% 0, 100% 30%, 50% 50%, 0 30%, 0 0);
+    cursor: grab;
+
+    >.item {
+        --index: 1;
+        --angle: calc(var(--delta) + 2 * var(--pi) * var(--index) / var(--n));
+        height: calc(2 * var(--item-radius));
+        width: calc(2 * var(--item-radius));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform:
+            translateX(calc(-50% + (var(--carousel-radius) - var(--item-radius)) * cos(var(--angle)))) translateY(calc(-50% + (var(--carousel-radius) - var(--item-radius)) * sin(var(--angle)))) rotate(calc(90deg + 180deg * var(--angle) / var(--pi)));
+        border-radius: 50%;
+
+        font-size: calc(var(--item-radius));
+
+        &:nth-child(1) {
+            --index: 1;
+        }
+
+        &:nth-child(2) {
+            --index: 2;
+        }
+
+        &:nth-child(3) {
+            --index: 3;
+        }
+
+        &:nth-child(4) {
+            --index: 4;
+        }
+
+        &:nth-child(5) {
+            --index: 5;
+        }
+
+        &:nth-child(6) {
+            --index: 6;
+        }
+
+        &:nth-child(7) {
+            --index: 7;
+        }
+
+        &:nth-child(8) {
+            --index: 8;
+        }
+    }
+}
+
+.rotating-thing img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+.rotating-thing a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+    border-radius: 20px;
+}
+
+.rotating-thing a:hover {
+    box-shadow: 0 0 54px rgb(1, 221, 118);
+    z-index: 5 !important;
+}
+
+.rotating-thing p {
+    color: white;
+    padding: 5;
+    background: black;
+    font-weight: bolder;
+
+    position: absolute;
+    opacity: 0;
+    transition: .5s;
+}
+
+.rotating-thing a:hover p {
+    opacity: 1;
+}
+
+
+controls {
+    position: absolute;
+
+    transform: translateX(-50%) translateY(-50%);
+
+    display: flex;
+    gap: 5rem;
+}
+
+.control-button {
+
+    background: black;
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 50%;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+.control-button:hover {
+    background: rgb(0, 27, 150);
+}

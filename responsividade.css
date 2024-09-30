@@ -1,0 +1,153 @@
+@media screen and (max-width:1005px) {
+    .tecno {
+        display: none;
+    }
+
+    .txtdigitado p {
+        font-size: 16px;
+    }
+
+    .tecnomb {
+        display: flex;
+    }
+
+    .imgstec img {
+        display: none;
+    }
+
+    .tecnoconteudo {
+
+        position: absolute;
+    }
+
+
+    .logo {
+        text-align: center;
+    }
+
+    .logo p {
+        text-align: center;
+    }
+
+    /*menu em colunas e lista tambem*/
+    .menubar,
+    ul {
+        flex-direction: column;
+        align-items: unset;
+    }
+
+    .menubar .iconmenuresponsivo {
+        display: flex;
+    }
+
+    .menubar .iconmenuresponsivo:focus~.menu ul {
+        height: 300px;
+    }
+
+    .menubar .menu ul {
+
+        overflow: hidden;
+        height: 0;
+    }
+
+    .menubar .menu ul li {
+        margin-bottom: 10px;
+        line-height: 2;
+    }
+
+    .menubar .menu ul li a {
+        background: transparent;
+        border-radius: 30px;
+
+        padding: 10px 600px;
+    }
+
+    article {
+        width: 100%;
+    }
+
+    section {
+        width: 90%;
+    }
+
+    .inicio {
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+
+    .inicio .conteudoinicio {
+        width: 100%;
+    }
+
+    /*seccao de projetos:*/
+    .projetos {
+        flex-direction: column;
+    }
+
+    .projetos .proj {
+        width: 80%;
+    }
+
+    /*Experiencias*/
+    .experiencias .colapsador.active .conteudocolapsador {
+        height: 600px;
+    }
+
+    /*formacao:*/
+    #form {
+
+        display: flex;
+        align-items: center;
+    }
+
+    .formacao {
+        margin-top: 50px;
+        flex-direction: column;
+
+    }
+
+    .escolaridade {
+        width: 100%;
+        height: auto;
+
+    }
+
+    /*seccao de rodape*/
+    #contato {
+
+        flex-direction: column;
+    }
+
+    .ctt,
+    .redessociais,
+    .funcionamento {
+        height: 100px;
+    }
+}
+
+/*tablets*/
+@media screen and (max-width: 768px) {
+    .btns {
+        flex-direction: column;
+    }
+
+    #btnlinkedin,
+    #btnwwp,
+    #btngithub {
+        width: 100%;
+        letter-spacing: 2px;
+    }
+
+    .proj {
+        flex-basis: calc(50% - 2%);
+    }
+}
+
+/*celulares*/
+@media screen and (max-width: 480px) {
+    .proj {
+        flex-basis: calc(100% - 2%);
+    }
+}
+
+@media (orientation: landscape) {}

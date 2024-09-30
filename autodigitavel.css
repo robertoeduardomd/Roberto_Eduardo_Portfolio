@@ -1,0 +1,111 @@
+.txtdigitado {
+    position: relative;
+
+    width: 300px;
+    font-family: sans-serif;
+    font-weight: bolder;
+}
+
+.txtdigitado p {
+    font-family: fontenumerotemp;
+    position: relative;
+    display: flex;
+    align-items: start;
+    text-align: start;
+    font-size: 22px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: black;
+    white-space: nowrap;
+    letter-spacing: 1px;
+
+}
+
+.txtdigitado p span {
+    margin-left: 5px;
+    position: relative;
+    width: 100%;
+}
+
+
+.txtdigitado p span::before {
+    content: "";
+    /*letras que passam*/
+    color: rgb(1, 221, 118);
+    animation: txtanimado 20s infinite;
+    transition: all 0.5s linear;
+}
+
+.txtdigitado p span::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: 2px solid black;
+    right: -135px;
+    width: calc(100% + 100px);
+    background-color: var(--after-color, rgb(0, 33, 105));
+    animation: digita 20s infinite steps(15), pisca 1.6s infinite;
+}
+
+@keyframes digita {
+
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95% {
+        width: 0;
+    }
+
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85% {
+
+        width: calc(100% + 145px);
+    }
+}
+
+@keyframes pisca {
+    0% {
+        border-left: 2px solid white;
+    }
+}
+
+@keyframes txtanimado {
+
+    0%,
+    20% {
+        content: " sou Roberto Eduardo Melara";
+    }
+
+    21%,
+    40% {
+        content: " sou desenvolvedor web";
+    }
+
+    41%,
+    60% {
+        content: " desenvolvo no Front-End";
+    }
+
+    61%,
+    80% {
+        content: " desenvolvo no Back-End"
+    }
+
+    81%,
+    100% {
+        content: "vamos desenvolver uma aplicação?";
+    }
+}
