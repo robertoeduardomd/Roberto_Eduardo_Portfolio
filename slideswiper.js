@@ -20,7 +20,7 @@ var TrandingSlider = new Swiper(".tranding-slider", {
   },
   autoplay: {
     delay: 900, // Tempo entre os slides no autoplay
-    disableOnInteraction: false,
+    disableOnInteraction: true,
   },
   speed: 8500, // Tempo da transição entre os slides (2000ms = 2 segundos)
 });

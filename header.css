@@ -141,6 +141,7 @@ header {
 .slider:before {
     position: absolute;
     content: "🌕";
+    font-size: 18px;
     display: flex;
     text-align: center;
     height: 26px;
@@ -187,6 +188,7 @@ input:checked+.slider:after {
 
 input:checked+.slider:before {
     content: "🌘";
+    font-size: 18px;
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(50px);

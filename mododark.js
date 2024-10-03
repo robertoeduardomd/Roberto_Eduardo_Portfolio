@@ -79,7 +79,7 @@ toggle.addEventListener("change", () => {
 
     // Reverter o ::after do span
     spanElement.style.setProperty("--after-content", "'Texto Original'");
-    spanElement.style.setProperty("--after-color", "rgb(0, 33, 105)");
+    spanElement.style.setProperty("--after-color", "red");
 
     tecno.style.background = "linear-gradient(45deg, black, rgb(0, 33, 105) )";
     tecnomb.style.background =
