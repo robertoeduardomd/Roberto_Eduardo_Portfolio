@@ -153,15 +153,16 @@ html {
     width: 5.5rem;
     height: 5.5rem;
     border-radius: 50%;
-    box-shadow: 0 0 24px black;
+    box-shadow: 0 0 24px #429867;
     left: 40%;
     transform: translateX(-42%);
     transition: .5s ease-in;
 }
 
 .tranding-slider-control .slider-arrow:hover {
-    box-shadow: 0 0 24px #429867;
-    background: #FAB243;
+    box-shadow: 0 0 24px #ecff45;
+    background: #0071a5;
+    zoom: .9;
 }
 
 .tranding-slider-control .slider-arrow ion-icon {
