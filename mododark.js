@@ -34,11 +34,6 @@ toggle.addEventListener("change", () => {
       cconhecer.style.color = "white";
     });
 
-    girade.style.background =
-      "linear-gradient(150deg, transparent, transparent, transparent, transparent, transparent, transparent, rgb(1, 221, 118), rgb(1, 221, 118), rgb(1, 221, 118), rgb(1, 221, 118))";
-    giradd.style.background =
-      "linear-gradient(210deg, transparent, transparent, transparent, transparent, transparent, transparent, rgb(1, 221, 118), rgb(1, 221, 118), rgb(1, 221, 118), rgb(1, 221, 118))";
-
     contcolapsador.forEach((ctcolap) => {
       ctcolap.style.background = "black";
     });
@@ -64,10 +59,6 @@ toggle.addEventListener("change", () => {
     clconhecer.forEach((cconhecer) => {
       cconhecer.style.color = "blue";
     });
-    girade.style.background =
-      "linear-gradient(150deg, transparent, transparent, transparent, transparent, transparent, transparent, black, black, black, black)";
-    giradd.style.background =
-      "linear-gradient(210deg, transparent, transparent, transparent, transparent, transparent, transparent, black, black, black, black)";
 
     contcolapsador.forEach((ctcolap) => {
       ctcolap.style.background = "white";
@@ -79,7 +70,7 @@ toggle.addEventListener("change", () => {
 
     // Reverter o ::after do span
     spanElement.style.setProperty("--after-content", "'Texto Original'");
-    spanElement.style.setProperty("--after-color", "red");
+    spanElement.style.setProperty("--after-color", "rgb(0, 33, 105)");
 
     tecno.style.background = "linear-gradient(45deg, black, rgb(0, 33, 105) )";
     tecnomb.style.background =
