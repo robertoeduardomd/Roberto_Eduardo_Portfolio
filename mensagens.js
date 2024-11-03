@@ -9,6 +9,7 @@ window.addEventListener("scroll", function () {
   const teca = document.querySelector(".teca");
   const expa = document.querySelector(".expa");
   const proa = document.querySelector(".proa");
+  const cert = document.querySelector(".cert");
   const fora = document.querySelector(".fora");
   //const hoba = document.querySelector(".hoba");
   const ctta = document.querySelector(".ctta");
@@ -22,6 +23,7 @@ window.addEventListener("scroll", function () {
     teca.classList.remove("scrolled");
     expa.classList.remove("scrolled");
     proa.classList.remove("scrolled");
+    cert.classList.remove("scrolled");
     fora.classList.remove("scrolled");
     ctta.classList.remove("scrolled");
 
@@ -33,6 +35,7 @@ window.addEventListener("scroll", function () {
     inia.classList.remove("scrolled");
     expa.classList.remove("scrolled");
     proa.classList.remove("scrolled");
+    cert.classList.remove("scrolled");
     fora.classList.remove("scrolled");
     ctta.classList.remove("scrolled");
 
@@ -44,6 +47,7 @@ window.addEventListener("scroll", function () {
     inia.classList.remove("scrolled");
     teca.classList.remove("scrolled");
     proa.classList.remove("scrolled");
+    cert.classList.remove("scrolled");
     fora.classList.remove("scrolled");
     ctta.classList.remove("scrolled");
   } else if (window.scrollY > 1800 && window.scrollY < 2400) {
@@ -52,9 +56,30 @@ window.addEventListener("scroll", function () {
     inia.classList.remove("scrolled");
     teca.classList.remove("scrolled");
     expa.classList.remove("scrolled");
+    cert.classList.remove("scrolled");
     fora.classList.remove("scrolled");
     ctta.classList.remove("scrolled");
-  } else if (window.scrollY > 2400 && window.scrollY < 3000) {
+  } else if (window.scrollY > 2400 && window.scrollY < 3400) {
+    cert.classList.add("scrolled");
+
+    fora.classList.remove("scrolled");
+    inia.classList.remove("scrolled");
+    teca.classList.remove("scrolled");
+    expa.classList.remove("scrolled");
+    proa.classList.remove("scrolled");
+
+    ctta.classList.remove("scrolled");
+    // hoba.classList.remove("scrolled");
+  } else if (window.scrollY > 3400 && window.scrollY < 4000) {
+    fora.classList.add("scrolled");
+
+    cert.classList.remove("scrolled");
+    inia.classList.remove("scrolled");
+    teca.classList.remove("scrolled");
+    expa.classList.remove("scrolled");
+    proa.classList.remove("scrolled");
+    ctta.classList.remove("scrolled");
+  } else if (window.scrollY > 4000 && window.scrollY < 4700) {
     fora.classList.add("scrolled");
 
     inia.classList.remove("scrolled");
@@ -62,15 +87,16 @@ window.addEventListener("scroll", function () {
     expa.classList.remove("scrolled");
     proa.classList.remove("scrolled");
     ctta.classList.remove("scrolled");
+    cert.classList.remove("scrolled");
     // hoba.classList.remove("scrolled");
-  } else if (window.scrollY > 3000 && window.scrollY < 3200) {
+  } else if (window.scrollY > 4700 && window.scrollY < 5500) {
     fora.classList.remove("scrolled");
     // hoba.classList.add("scrolled");
     ctta.classList.remove("scrolled");
     iconlk.style.opacity = "1";
     iconwwp.style.opacity = "1";
     iconegithub.style.opacity = "1";
-  } else if (window.scrollY >= 2400) {
+  } else if (window.scrollY >= 5500) {
     // hoba.classList.remove("scrolled");
     ctta.classList.add("scrolled");
 

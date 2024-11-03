@@ -54,21 +54,28 @@ header {
     cursor: url(../public/imgs/neonlinkselect.cur), pointer;
 }
 
+.logo {
+    display: inline-block;
+}
+
 .logo>* {
     color: white;
-
+    font-size: 22px;
 }
 
 .logo p {
     font-family: fontenumerotemp, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: end;
     color: rgb(1, 221, 118);
+    font-size: 14px;
 }
 
 .logo h1 {
     text-align: end;
     color: white;
 }
+
+
 
 .menu {
     display: flex;
