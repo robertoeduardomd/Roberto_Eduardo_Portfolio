@@ -20,7 +20,7 @@ body {
 a {
     cursor: url(../public/imgs/neonlinkselect.cur), pointer;
 }
-
+ 
 @keyframes degradeanimacao {
 
     0% {
@@ -220,4 +220,8 @@ h2 {
 
 .jus {
     text-align: justify;
+}
+.imgsentado{
+    filter: contrast(130%);
+    box-shadow: 0 0 24px rgb(0, 33, 105);
 }

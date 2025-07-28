@@ -106,6 +106,7 @@ p {
 }
 
 .imginicio {
+    margin-top: 10px;
     position: relative;
     display: flex;
     align-items: center;
@@ -113,10 +114,7 @@ p {
     width: 50%;
 }
 
-.imginicio img {
-    box-shadow: 0 0 24px rgb(1, 221, 118);
 
-}
 
 .btns {
     display: flex;
@@ -708,4 +706,7 @@ p {
     width: 200px;
     height: 200px;
     object-fit: contain;
+}
+.imgfundositeimg{
+   
 }

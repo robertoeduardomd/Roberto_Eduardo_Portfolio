@@ -11,6 +11,7 @@ const form = document.getElementById("form");
 const switc = document.querySelector(".switch");
 const toggle = document.querySelector(".toggle-logo");
 const background = document.querySelector(".imgfundositeimg");
+const imgeu = document.querySelector(".imgsentado");
 const imggit = document.querySelector(".iconegithub");
 const experiencias = document.querySelector(".experiencias ");
 const contcolapsador = document.querySelectorAll(".conteudocolapsador ");
@@ -26,7 +27,7 @@ toggle.addEventListener("change", () => {
     headerr.style.background =
       "linear-gradient(45deg, black, rgb(0, 0, 0), rgb(109, 109, 109), rgb(0, 0, 0), black)";
     conteudoinicio.style.background = "black";
-
+   
     background.style.filter = "invert(100%)";
     imggit.style.filter = "invert(100%)";
     experiencias.style.background = "black";
@@ -49,7 +50,9 @@ toggle.addEventListener("change", () => {
     tecno.style.background = "black";
     tecnomb.style.background = "black";
     form.style.background = "black";
+    imgeu.style.boxShadow = "0 0 24px rgba(0, 0, 0, 1)";
   } else {
+     
     headerr.style.background =
       "linear-gradient(45deg, rgb(0, 33, 105), rgb(0, 33, 105), rgb(109, 109, 109), rgb(0, 33, 105), rgb(0, 33, 105))";
     conteudoinicio.style.background = "rgb(0, 33, 105)";
@@ -76,5 +79,6 @@ toggle.addEventListener("change", () => {
     tecnomb.style.background =
       "linear-gradient(45deg, black, rgb(0, 33, 105) )";
     form.style.background = "linear-gradient(45deg, black, rgb(0, 33, 105) )";
+    imgeu.style.boxShadow = "0 0 24px rgb(0, 33, 105)";
   }
 });
