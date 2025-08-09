@@ -701,11 +701,16 @@ p {
     transform: scale(1.2);
 }
 
+
 #certificacoes img {
     display: flex;
     width: 200px;
     height: 200px;
     object-fit: contain;
+}
+#certificacoes .imgamplia{
+    width: 500px;
+    height: 500px;
 }
 .imgfundositeimg{
    
