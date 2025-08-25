@@ -99,9 +99,12 @@
             --index: 8;
         }
     }
+
     >.item:hover {
-        zoom: 1.4;
+        zoom: 1.5;
         z-index: 9999;
+        transition: 0.9s all;
+
     }
 
 }
