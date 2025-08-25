@@ -45,7 +45,7 @@ document.addEventListener("mouseup", onMouseUp);
 
 // Inicializa a rotação contínua com uma velocidade mais lenta
 function animate() {
-  delta -= 0.005;
+  delta -= 0.0005;
   updateRotation();
   requestAnimationFrame(animate);
 }

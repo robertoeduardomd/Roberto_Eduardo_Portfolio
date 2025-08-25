@@ -99,6 +99,11 @@
             --index: 8;
         }
     }
+    >.item:hover {
+        zoom: 1.3;
+        z-index: 9999;
+    }
+
 }
 
 .rotating-thing img {
