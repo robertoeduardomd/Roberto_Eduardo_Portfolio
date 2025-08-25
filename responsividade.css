@@ -140,6 +140,11 @@
     .proj {
         flex-basis: calc(50% - 2%);
     }
+
+    .jus {
+        text-align: justify;
+        font-size: 14px;
+    }
 }
 
 /*celulares*/
