@@ -361,7 +361,8 @@ p {
 #imgmongo,
 #imgpacoteoffice,
 #imgmendix,
-#imgsprint {
+#imgsprint,
+#imgpowerbi {
     transition: .5s;
     opacity: 0;
 }
@@ -386,7 +387,8 @@ p {
 .cardmongo,
 .cardpacoteoffice,
 .cardmendix,
-.cardsprint {
+.cardsprint,
+.cardpowerbi {
 
     display: flex;
     align-items: center;

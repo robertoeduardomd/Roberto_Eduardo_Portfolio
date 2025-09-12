@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const lipacoteoffice = document.getElementById("lipacoteoffice");
   const limendix = document.getElementById("limendix");
   const lisprint = document.getElementById("lisprint");
+  const lipowerbi = document.getElementById("lipowerbi");
 
   const imghtml = document.getElementById("imghtml");
   const imgcss = document.getElementById("imgcss");
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const imgpacoteoffice = document.getElementById("imgpacoteoffice");
   const imgmendix = document.getElementById("imgmendix");
   const imgsprint = document.getElementById("imgsprint");
+  const imgpowerbi = document.getElementById("imgpowerbi");
 
   const cardhtml = document.querySelector(".cardhtml");
   const cardcss = document.querySelector(".cardcss");
@@ -44,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const cardpacoteoffice = document.querySelector(".cardpacoteoffice");
   const cardmendix = document.querySelector(".cardmendix");
   const cardsprint = document.querySelector(".cardsprint");
+  const cardpowerbi = document.querySelector(".cardpowerbi");
 
   lihtml.addEventListener("mouseover", function () {
     imghtml.style.opacity = "1";
@@ -229,6 +232,20 @@ document.addEventListener("DOMContentLoaded", function () {
   lisprint.addEventListener("mouseleave", function () {
     imgsprint.style.opacity = "0";
     cardsprint.style.opacity = "0";
+    h2tec.style.opacity = "1";
+    h2tec2.style.opacity = "1";
+    h2hab.style.opacity = "1";
+  });
+  lipowerbi.addEventListener("mouseover", function () {
+    imgpowerbi.style.opacity = "1";
+    cardpowerbi.style.opacity = "1";
+    h2tec.style.opacity = "0";
+    h2tec2.style.opacity = "0";
+    h2hab.style.opacity = "0";
+  });
+  lipowerbi.addEventListener("mouseleave", function () {
+    imgpowerbi.style.opacity = "0";
+    cardpowerbi.style.opacity = "0";
     h2tec.style.opacity = "1";
     h2tec2.style.opacity = "1";
     h2hab.style.opacity = "1";
