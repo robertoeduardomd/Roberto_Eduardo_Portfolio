@@ -270,7 +270,9 @@ p {
     line-height: 60px;
     gap: 30px;
 }
-
+.tgtextimg img{
+ object-fit: contain;
+}
 .tecnoconteudomb img {
     float: left;
 
@@ -352,6 +354,7 @@ p {
 #imgjs,
 #imgnode,
 #imgreact,
+#imgpython,
 #imgjava,
 #imggit,
 #imgmysql,
@@ -376,6 +379,7 @@ p {
 .cardjs,
 .cardnode,
 .cardreact,
+.cardpython,
 .cardjava,
 .cardgit,
 .cardmysql,

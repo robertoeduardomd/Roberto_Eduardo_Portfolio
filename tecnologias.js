@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const lijs = document.getElementById("lijs");
   const linode = document.getElementById("linode");
   const lireact = document.getElementById("lireact");
+  const lipython = document.getElementById("lipython");
   const lijava = document.getElementById("lijava");
   const ligit = document.getElementById("ligit");
   const limysql = document.getElementById("limysql");
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const imgjs = document.getElementById("imgjs");
   const imgnode = document.getElementById("imgnode");
   const imgreact = document.getElementById("imgreact");
+  const imgpython = document.getElementById("imgpython");
   const imgjava = document.getElementById("imgjava");
   const imggit = document.getElementById("imggit");
   const imgmysql = document.getElementById("imgmysql");
@@ -34,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const cardjs = document.querySelector(".cardjs");
   const cardnode = document.querySelector(".cardnode");
   const cardreact = document.querySelector(".cardreact");
+  const cardpython = document.querySelector(".cardpython");
   const cardjava = document.querySelector(".cardjava");
   const cardgit = document.querySelector(".cardgit");
   const cardmysql = document.querySelector(".cardmysql");
@@ -112,6 +115,20 @@ document.addEventListener("DOMContentLoaded", function () {
   lireact.addEventListener("mouseleave", function () {
     imgreact.style.opacity = "0";
     cardreact.style.opacity = "0";
+    h2tec.style.opacity = "1";
+    h2tec2.style.opacity = "1";
+    h2hab.style.opacity = "1";
+  });
+  lipython.addEventListener("mouseover", function () {
+    imgpython.style.opacity = "1";
+    cardpython.style.opacity = "1";
+    h2tec.style.opacity = "0";
+    h2tec2.style.opacity = "0";
+    h2hab.style.opacity = "0";
+  });
+  lipython.addEventListener("mouseleave", function () {
+    imgpython.style.opacity = "0";
+    cardpython.style.opacity = "0";
     h2tec.style.opacity = "1";
     h2tec2.style.opacity = "1";
     h2hab.style.opacity = "1";
