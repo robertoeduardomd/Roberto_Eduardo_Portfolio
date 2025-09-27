@@ -34,6 +34,7 @@
     color: rgb(1, 221, 118);
     animation: txtanimado 20s infinite;
     transition: all 0.5s linear;
+    animation-delay: 7s; 
 }
 
 .txtdigitado p span::after {
@@ -45,6 +46,7 @@
     width: calc(100% + 100px);
     background-color: var(--after-color, rgb(0, 33, 105));
     animation: digita 20s infinite steps(15), pisca 1.6s infinite;
+     animation-delay: 6s, 6s;
 }
 
 @keyframes digita {
