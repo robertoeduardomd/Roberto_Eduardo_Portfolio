@@ -270,9 +270,11 @@ p {
     line-height: 60px;
     gap: 30px;
 }
-.tgtextimg img{
- object-fit: contain;
+
+.tgtextimg img {
+    object-fit: contain;
 }
+
 .tecnoconteudomb img {
     float: left;
 
@@ -714,10 +716,10 @@ p {
     height: 200px;
     object-fit: contain;
 }
-#certificacoes .imgamplia{
+
+#certificacoes .imgamplia {
     width: 500px;
     height: 500px;
 }
-.imgfundositeimg{
-   
-}
+
+.imgfundositeimg {}
