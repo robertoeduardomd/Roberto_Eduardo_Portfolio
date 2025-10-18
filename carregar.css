@@ -12,7 +12,7 @@
     color: rgb(1, 221, 118);
     background: black;
     transition: .3s all ease;
-    
+
 
 }
 
@@ -23,7 +23,7 @@
 
 .preloader-body {
     text-align: center;
-    
+
 }
 
 .preloader-body p {
@@ -79,7 +79,7 @@
     position: relative;
     transform-style: preserve-3d;
     animation: openPortal 5s forwards;
-    
+
 }
 
 .portal h1 {
@@ -119,7 +119,7 @@
             rgba(1, 34, 221, 0.274) 70%);
     border-radius: 50%;
     animation: pulse 2s infinite alternate;
-   
+
 }
 
 .portal:before {
@@ -138,6 +138,7 @@
     100% {
         transform: scale(1);
     }
+
 }
 
 @keyframes openPortaltext {
@@ -160,13 +161,16 @@
         transform: scale(1);
         opacity: 0.2;
     }
+
+
 }
-.efeitologore{
+
+.efeitologore {
     position: fixed;
-    transform: translate(-50px,-50px);
+    transform: translate(-50px, -50px);
     opacity: 0.2 !important;
     width: 1000px;
-   height: 1000px;
-    
-   
+    height: 1000px;
+
+
 }
