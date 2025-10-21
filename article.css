@@ -124,10 +124,12 @@ p {
     padding-top: 20px;
     flex-direction: row;
     gap: 2%;
+    flex-wrap: wrap;
 }
 
 #btnlinkedin,
-#btnwwp {
+#btnwwp,
+#curriculo {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,7 +149,8 @@ p {
 }
 
 #btnlinkedin img,
-#btnwwp img {
+#btnwwp img,
+#curriculo img {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -175,7 +178,8 @@ p {
 
 #btnlinkedin:hover img,
 
-#btnwwp:hover img {
+#btnwwp:hover img,
+#curriculo:hover img {
     filter: hue-rotate(90deg);
     filter: grayscale(0%);
 }
@@ -205,7 +209,8 @@ p {
 
 #btnlinkedin:hover,
 #btngithub:hover,
-#btnwwp:hover {
+#btnwwp:hover,
+#curriculo:hover {
     border: 2px solid rgb(1, 221, 118);
     box-shadow: 0 0 24px rgb(1, 221, 118);
 
