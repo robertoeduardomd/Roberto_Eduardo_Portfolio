@@ -7,12 +7,12 @@
 }
 
 .txtdigitado p {
-    font-family: fontenumerotemp;
+    font-family: sans-serif;
     position: relative;
     display: flex;
     align-items: start;
     text-align: start;
-    font-size: 22px;
+    font-size: 17px;
     font-weight: 800;
     text-transform: uppercase;
     color: black;
@@ -34,7 +34,7 @@
     color: rgb(1, 221, 118);
     animation: txtanimado 20s infinite;
     transition: all 0.5s linear;
-    animation-delay: 7s; 
+    animation-delay: 7s;
 }
 
 .txtdigitado p span::after {
@@ -46,7 +46,7 @@
     width: calc(100% + 100px);
     background-color: var(--after-color, rgb(0, 33, 105));
     animation: digita 20s infinite steps(15), pisca 1.6s infinite;
-     animation-delay: 6s, 6s;
+    animation-delay: 6s, 6s;
 }
 
 @keyframes digita {
@@ -83,31 +83,25 @@
         border-left: 2px solid white;
     }
 }
-
 @keyframes txtanimado {
 
-    0%,
-    20% {
-        content: "Olá sou Roberto Eduardo Melara";
+    0%, 20% {
+        content: "Interfaces que fazem sentido";
     }
 
-    21%,
-    40% {
-        content: " Sou desenvolvedor FULL STACK";
+    21%, 40% {
+        content: "Sistemas pensados para escalar";
     }
 
-    41%,
-    60% {
-        content: " Desenvolvo para WEB";
+    41%, 60% {
+        content: "Código organizado e funcional";
     }
 
-    61%,
-    80% {
-        content: " Desenvolvo para MOBILE"
+    61%, 80% {
+        content: "Experiência fluida do início ao fim";
     }
 
-    81%,
-    100% {
-        content: "vamos desenvolver uma aplicação?";
+    81%, 100% {
+        content: "Tecnologia aplicada com propósito";
     }
 }

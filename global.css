@@ -9,6 +9,7 @@
 }
 html {
     scroll-behavior: smooth;
+    zoom: 0.9;
 
 }
 
@@ -220,6 +221,7 @@ h2 {
 
 .jus {
     text-align: justify;
+    font-family: sans-serif;
 }
 .imgsentado{
     filter: contrast(130%);
