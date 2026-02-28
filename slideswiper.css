@@ -12,13 +12,13 @@ html {
 
 @media (min-width: 1440px) {
     html {
-        zoom: 1.5;
+        zoom: 2.5;
     }
 }
 
 @media (min-width: 2560px) {
     html {
-        zoom: 1.7;
+        zoom: 2.7;
     }
 }
 
