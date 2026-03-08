@@ -606,6 +606,13 @@ p {
     height: 300px;
 }
 
+.escolaridade img {
+    width: 100%;
+    object-fit: contain;
+    height: 130%;
+
+}
+
 .recado {
     height: 600px;
     text-align: center;
