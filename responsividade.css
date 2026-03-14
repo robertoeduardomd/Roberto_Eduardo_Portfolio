@@ -1,3 +1,10 @@
+@media screen and (max-width:1870px) {
+    .menubar {
+
+        width: 100%;
+    }
+}
+
 @media screen and (max-width:1005px) {
     .tecno {
         display: none;
@@ -132,7 +139,8 @@
 
     #btnlinkedin,
     #btnwwp,
-    #btngithub,#curriculo {
+    #btngithub,
+    #curriculo {
         width: 100%;
         letter-spacing: 2px;
     }
@@ -156,4 +164,3 @@
 }
 
 @media (orientation: landscape) {}
-
