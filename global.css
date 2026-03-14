@@ -7,9 +7,21 @@
     box-sizing: border-box;
 
 }
+
+:root {
+    --branco: #fff;
+    --verde1: rgb(1, 221, 118);
+    --azul: rgb(0, 33, 105);
+
+}
+
+.branco {
+    color: var(--branco);
+}
+
 html {
     scroll-behavior: smooth;
-    
+
 
 }
 
@@ -21,7 +33,7 @@ body {
 a {
     cursor: url(../public/imgs/neonlinkselect.cur), pointer;
 }
- 
+
 @keyframes degradeanimacao {
 
     0% {
@@ -35,7 +47,7 @@ a {
 
 ::-webkit-scrollbar {
     background: linear-gradient(45deg, black, black, rgb(0, 33, 105), black, black, rgb(0, 33, 105), black, black);
-    box-shadow: 0 10px 204px rgb(1, 221, 118);
+    box-shadow: 0 10px 204px var(--verde1);
     border-radius: 2px;
     background-size: 500%, 100%;
     animation: degradeanimacao 8s infinite alternate;
@@ -78,7 +90,7 @@ h2 {
 
     >* {
 
-        color: white !important;
+        color: var(--verde1) !important;
     }
 
 }
@@ -93,6 +105,11 @@ h2 {
     transition: .5s;
     cursor: pointer;
     opacity: 0;
+}
+
+h6 {
+    color: rgb(182, 182, 182);
+    
 }
 
 .iconegithub:before {
@@ -223,7 +240,8 @@ h2 {
     text-align: justify;
     font-family: sans-serif;
 }
-.imgsentado{
+
+.imgsentado {
     filter: contrast(130%);
     box-shadow: 0 0 24px rgb(0, 33, 105);
 }

@@ -102,7 +102,7 @@ p {
 }
 
 .conteudoinicio p {
-    color: rgb(182, 182, 182);
+    color: white;
 }
 
 .imginicio {
@@ -130,6 +130,7 @@ p {
 #btnlinkedin,
 #btnwwp,
 #curriculo {
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -190,6 +191,7 @@ p {
 }
 
 #btngithub {
+     margin-top: 20px;
     line-height: 50%;
     text-decoration: none;
     display: flex;
@@ -588,9 +590,20 @@ p {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+    position:relative;
 
 }
-
+.formacao .imgbeca{
+    display:flex;
+    position: absolute;
+     position: absolute;
+    right: 0;
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+    z-index: 0;
+    
+}
 .formacao .colapsador {
     width: 100%;
 }
@@ -604,12 +617,14 @@ p {
 .escolaridade {
     width: 33%;
     height: 300px;
+    z-index: 1;
 }
 
 .escolaridade img {
     width: 100%;
     object-fit: contain;
     height: 130%;
+    backdrop-filter: ;
 
 }
 

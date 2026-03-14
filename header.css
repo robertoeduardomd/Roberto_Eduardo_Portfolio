@@ -5,7 +5,7 @@
 
 header {
     width: 100%;
-    min-height: 100px;
+    min-height: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -63,14 +63,14 @@ header {
 
 .logo>* {
     color: white;
-    font-size: 30px;
+    font-size: 28px;
 }
 
 .logo p {
-    font-family: fontenumerotemp, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:  sans-serif;
     text-align: end;
     color: rgb(1, 221, 118);
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .logo h1 {
@@ -102,12 +102,13 @@ header {
 
 
 .menu ul li a {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bolder;
     text-decoration: none;
     color: rgb(189, 189, 189);
-    padding: 30px 15px;
+    padding: 20px 16px;
     transition: .5s ease-in-out;
+   
 }
 
 .menu ul li:hover {
