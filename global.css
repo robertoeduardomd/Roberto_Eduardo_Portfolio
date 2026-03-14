@@ -14,7 +14,11 @@
     --azul: rgb(0, 33, 105);
 
 }
-
+::selection{
+    background: var(--verde1);
+    color:var(--branco);
+    border-radius: 30px;
+}
 .branco {
     color: var(--branco);
 }
