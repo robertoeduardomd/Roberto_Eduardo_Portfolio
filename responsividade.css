@@ -30,7 +30,9 @@
     .logo p {
         text-align: center;
     }
-
+    .dmenu{
+        display: flex;
+    }
     /*menu em colunas e lista tambem*/
     .menubar,
     ul {
@@ -124,6 +126,23 @@
     .funcionamento {
         height: 100px;
     }
+    .formacao .imgbeca {
+    display: flex;
+    position: absolute;
+   
+    right: 0;
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+    z-index: 0;
+
+}
+.formacao p{
+    backdrop-filter: blur(30);
+}
+.switch{
+    display:none;
+}
 }
 
 /*tablets*/

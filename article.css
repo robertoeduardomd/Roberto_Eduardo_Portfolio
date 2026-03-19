@@ -598,7 +598,7 @@ p {
 .formacao .imgbeca {
     display: flex;
     position: absolute;
-    position: absolute;
+   
     right: 0;
     width: 50%;
     height: auto;
@@ -623,10 +623,11 @@ p {
     height: 300px;
     z-index: 1;
     margin-right: 3px;
-    
+   
 }
+
 .escolaridade p{
-border: 2px solid white;
+border: 1px solid white;
 border-radius: 10px;
 }
 .escolaridade img {

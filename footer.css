@@ -32,79 +32,7 @@ footer p {
     flex-direction: column;
 }
 
-.redessociais ul {
 
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-    list-style-type: none;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    flex-direction: row;
-}
-
-.redessociais ul li {
-    color: white;
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border-radius: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    transition: all 0.5s linear;
-    cursor: url(../public/imgs/neonlinkselect.cur), pointer;
-    overflow: hidden;
-}
-
-.redessociais ul li:hover {
-    width: 180px;
-    box-shadow: 0.2px 1px 10px rgb(255, 255, 255);
-}
-
-.redessociais ul li .icon {
-    color: rgb(1, 221, 118);
-    font-size: 1.5em;
-    transition: all 0.1s linear;
-}
-
-.redessociais ul li .text {
-    
-    font-size: 18px;
-    cursor: pointer;
-    transform: scale(0);
-    transition: all 0.1s linear;
-    position: absolute;
-}
-
-.redessociais ul li:hover .text {
-    transform: scale(1);
-}
-
-.redessociais ul li:hover .icon {
-    transform: scale(0);
-
-}
-
-.redessociais ul li span {
-    position: absolute;
-}
-
-.redessociais ul li::before {
-    content: '';
-    position: absolute;
-    background-image: linear-gradient(45deg, var(--cor1), var(--cor2));
-    inset: 0;
-    opacity: 0;
-    border-radius: 60px;
-}
-
-.redessociais ul li:hover::before {
-    opacity: 1;
-}
 
 footer h3 {
     font-size: 50px;
@@ -122,4 +50,77 @@ footer h4 {
 .funcionamento>p {
     display: block;
 
+}
+
+.ulredes {
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: row;
+margin-top: 10px;
+}
+
+.ulredes li {
+list-style: none;
+}
+
+.ulredes li a {
+width: 80px;
+height: 80px;
+background-color: #fff;
+text-align: center;
+line-height: 80px;
+font-size: 35px;
+margin: 0 10px;
+display: block;
+border-radius: 50%;
+position: relative;
+overflow: hidden;
+border: 3px solid #fff;
+z-index: 1;
+}
+
+.ulredes li a .icon {
+position: relative;
+color: #262626;
+transition: .5s;
+z-index: 3;
+}
+
+.ulredes li a:hover .icon {
+color: #fff;
+transform: rotateY(360deg);
+}
+
+.ulredes li a:before {
+content: "";
+position: absolute;
+top: 100%;
+left: 0;
+width: 100%;
+height: 100%;
+background: #f00;
+transition: .5s;
+z-index: 2;
+}
+
+.ulredes li a:hover:before {
+top: 0;
+}
+
+.ulredes li:nth-child(1) a:before{
+background: linear-gradient(45deg, #f09533a6 0%, #e6693c93 25%, #dc27429d 50%, #cc2366 75%, #bc1888 100%);
+
+}
+
+.ulredes li:nth-child(2) a:before{
+background: rgba(61, 50, 50, 0.712);
+}
+
+.ulredes li:nth-child(3) a:before {
+background: #0077b5;
+}
+
+.ulredes li:nth-child(4) a:before {
+background: #11ad03ab;
 }
