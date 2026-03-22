@@ -95,7 +95,10 @@
     .experiencias .colapsador.active .conteudocolapsador {
         height: 600px;
     }
-
+ 
+    #certificacoes p{
+        display: none;
+    }
     /*formacao:*/
     #form {
 
@@ -108,7 +111,9 @@
         flex-direction: column;
 
     }
-
+    .imgbeca{
+    opacity: 0;
+   }
     .escolaridade {
         width: 100%;
         height: auto;
@@ -150,7 +155,9 @@
     .btns {
         flex-direction: column;
     }
-
+  .imgbeca{
+    display: none;
+   }
     #btnlinkedin,
     #btnwwp,
     #btngithub,
@@ -175,6 +182,9 @@
     .proj {
         flex-basis: calc(100% - 2%);
     }
+      .imgbeca{
+    display: none;
+   }
 }
 
 @media (orientation: landscape) {}
