@@ -12,15 +12,19 @@ var TrandingSlider = new Swiper(".tranding-slider", {
   },
   pagination: {
     el: ".swiper-pagination",
+
     clickable: true,
   },
+
   navigation: {
     nextEl: ".swiper-button-next",
+
     prevEl: ".swiper-button-prev",
   },
+
   autoplay: {
-    delay: 900, // Tempo entre os slides no autoplay
+    delay: 900,
     disableOnInteraction: true,
   },
-  speed: 3000, // Tempo da transição entre os slides (2000ms = 2 segundos)
+  speed: 3000,
 });

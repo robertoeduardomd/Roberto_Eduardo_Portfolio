@@ -520,12 +520,13 @@ p {
     height: auto;
     gap: 10px;
     flex-direction: row;
-
+    flex-wrap: wrap;
 }
 
 .projetos .proj {
     display: flex;
-    width: 32%;
+    width: 30%;
+    min-width: 280px;
     height: 400px;
     background: rgb(233, 233, 233);
     border: 3px solid blue;
@@ -533,9 +534,8 @@ p {
     overflow: hidden;
     transition: .3s;
     cursor: url(../public/imgs/neonlinkselect.cur), pointer;
+    flex: none;
 }
-
-
 
 .projetos .proj a {
     text-decoration: none;
@@ -623,12 +623,15 @@ p {
     height: 300px;
     z-index: 1;
     margin-right: 3px;
-   
+   display: flex;
+   align-items:center;
+   justify-content: center;
 }
 
 .escolaridade p{
 border: 1px solid white;
 border-radius: 10px;
+
 }
 .escolaridade img {
     width: 100%;
