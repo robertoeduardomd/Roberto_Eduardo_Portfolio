@@ -491,7 +491,7 @@ p {
     overflow: hidden;
     transition: .5s;
     border-radius: 30px;
-    
+
 }
 
 .colapsador .conteudocolapsador p {
@@ -598,7 +598,7 @@ p {
 .formacao .imgbeca {
     display: flex;
     position: absolute;
-   
+
     right: 0;
     width: 50%;
     height: auto;
@@ -623,21 +623,26 @@ p {
     height: 300px;
     z-index: 1;
     margin-right: 3px;
-   display: flex;
-   align-items:center;
-   justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.escolaridade p{
-border: 1px solid white;
-border-radius: 10px;
-
+.escolaridade p {
+    border: 1px solid white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
 }
+
 .escolaridade img {
     width: 100%;
     object-fit: contain;
     height: 130%;
-   
+
 }
 
 .recado {
