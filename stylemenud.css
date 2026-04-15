@@ -1,123 +1,136 @@
 .dmenu {
-position: fixed;
-display: none;
-justify-content: center;
-align-items: center;
-width: 17px;
-height: 17px;
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 17px;
+  height: 17px;
 
- transition: 0.5s;
- z-index: 999;
-    right: 40px;
-    top: 40px;
-    animation: pulsarVerde 6s infinite;
+  transition: 0.5s;
+  z-index: 999;
+  right: 40px;
+  top: 40px;
+  animation: pulsarVerde 6s infinite;
 }
 
 @keyframes pulsarVerde {
-  0%, 45%, 100% {
+
+  0%,
+  45%,
+  100% {
     box-shadow: 0 0 8px 2px rgba(45, 252, 82, 0.6);
   }
-  15%, 35% {
+
+  15%,
+  35% {
     box-shadow: 0 0 35px 15px rgba(45, 252, 82, 1);
   }
+
   25% {
     box-shadow: 0 0 50px 25px rgba(45, 252, 82, 0.9);
   }
 }
 
 .dmenu .navigation {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
 }
 
 .dmenu .navigation a {
-position: absolute;
-width: 10px;
-height: 10px;
-background: #fff;
-transform: translate(calc(15px * var(--x)), calc(15px * var(--y)));
-border-radius: 50%;
-transition: transform 0.5s, width 0.2s, height 0.2s, background 0.1s;
-transition-delay: calc(0.1s * var(--i));
-display: flex;
-justify-content: center;
-align-items: center;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  transform: translate(calc(15px * var(--x)), calc(15px * var(--y)));
+  border-radius: 50%;
+  transition: transform 0.5s, width 0.2s, height 0.2s, background 0.1s;
+  transition-delay: calc(0.1s * var(--i));
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dmenu .navigation a:hover {
-    box-shadow: 0 0 24px white;
+  box-shadow: 0 0 24px white;
 }
 
 .dmenu .navigation.actived a {
-width: 50px;
-height: 50px;
-background: rgb(12, 26, 160);
-transform: translate(calc(70px * var(--x)), calc(70px * var(--y)));
-
+  width: 50px;
+  height: 50px;
+  background: rgb(12, 26, 160);
+  transform: translate(calc(70px * var(--x)), calc(70px * var(--y)));
+  border: 2px solid white;
+  transition: 0.2s linear;
 }
+
+.dmenu .navigation.actived a:hover {
+  border: 2px solid rgb(2, 182, 35);
+}
+
 .dmenu .navigation a ion-icon {
-transition: 0.5s;
-font-size: 1em;
-color: #fff;
+  transition: 0.5s;
+  font-size: 1em;
+  color: #fff;
 
 }
+
 .dmenu .navigation.actived a ion-icon {
-    
-font-size: 5em;
+
+  font-size: 5em;
 }
+
 .dmenu .navigation.actived a:hover ion-icon {
-color: #2dfc52;
-filter: drop-shadow(0 0 2px #2dfc52) drop-shadow(0 0 5px #2dfc52)
-drop-shadow(0 0 15px #2dfc52);
-
+  color: #2dfc52;
 }
+
 .close {
-position: absolute;
-width: 10px;
-height: 10px;
-background: #fff;
-transition: 0.5s;
-transition-delay: 0.4s;
-pointer-events: none;
-display: flex;
-justify-content: center;
-align-items: center;
-border-radius: 50%;
-}
-.dmenu .navigation.actived ~ .close {
-width: 47px;
-height: 47px;
-pointer-events: initial;
-transition-delay: 0.1s;
- background: rgb(134, 1, 1);
-font-size: 47px;
-cursor: pointer;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  transition: 0.5s;
+  transition-delay: 0.4s;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }
 
+.dmenu .navigation.actived~.close {
+  width: 47px;
+  height: 47px;
+  pointer-events: initial;
+  transition-delay: 0.1s;
+  background: rgb(134, 1, 1);
+  color: white;
+  font-size: 47px;
+  cursor: pointer;
+}
 
 .dmenu:has(.navigation.actived) {
-   
-     transform: translate(-50%, -50%);
-      left: 50%;
-    top: 50%;
-    animation: none;
+
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  animation: none;
 }
 
-.dmenu .navigation ~ .close ion-icon {
-font-size: 2em;
-scale: 0;
-color: #10131c;
-transition: 0.5s;
+.dmenu .navigation~.close ion-icon {
+  font-size: 2em;
+  scale: 0;
+  color: white;
+  transition: 0.5s;
 
 }
 
-.dmenu .navigation.actived ~ .close ion-icon {
-scale: 1;
-transition-delay: 1s;
+.dmenu .navigation.actived~.close ion-icon {
+  scale: 1;
+  transition-delay: 1s;
 }
