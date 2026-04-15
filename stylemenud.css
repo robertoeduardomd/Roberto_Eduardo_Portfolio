@@ -1,4 +1,3 @@
-
 .dmenu {
 position: fixed;
 display: none;
@@ -11,8 +10,20 @@ height: 17px;
  z-index: 999;
     right: 40px;
     top: 40px;
+    animation: pulsarVerde 6s infinite;
 }
 
+@keyframes pulsarVerde {
+  0%, 45%, 100% {
+    box-shadow: 0 0 8px 2px rgba(45, 252, 82, 0.6);
+  }
+  15%, 35% {
+    box-shadow: 0 0 35px 15px rgba(45, 252, 82, 1);
+  }
+  25% {
+    box-shadow: 0 0 50px 25px rgba(45, 252, 82, 0.9);
+  }
+}
 
 .dmenu .navigation {
     position: relative;
@@ -23,8 +34,8 @@ height: 17px;
     justify-content: center;
     align-items: center;
     transition: 0.5s;
-   
 }
+
 .dmenu .navigation a {
 position: absolute;
 width: 10px;
@@ -38,9 +49,11 @@ display: flex;
 justify-content: center;
 align-items: center;
 }
+
 .dmenu .navigation a:hover {
     box-shadow: 0 0 24px white;
 }
+
 .dmenu .navigation.actived a {
 width: 50px;
 height: 50px;
@@ -93,6 +106,7 @@ cursor: pointer;
      transform: translate(-50%, -50%);
       left: 50%;
     top: 50%;
+    animation: none;
 }
 
 .dmenu .navigation ~ .close ion-icon {
