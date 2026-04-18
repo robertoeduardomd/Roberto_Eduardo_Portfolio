@@ -10,25 +10,6 @@
   z-index: 999;
   right: 40px;
   top: 40px;
-  animation: pulsarVerde 6s infinite;
-}
-
-@keyframes pulsarVerde {
-
-  0%,
-  45%,
-  100% {
-    box-shadow: 0 0 8px 2px rgba(45, 252, 82, 0.6);
-  }
-
-  15%,
-  35% {
-    box-shadow: 0 0 35px 15px rgba(45, 252, 82, 1);
-  }
-
-  25% {
-    box-shadow: 0 0 50px 25px rgba(45, 252, 82, 0.9);
-  }
 }
 
 .dmenu .navigation {
@@ -56,6 +37,88 @@
   align-items: center;
 }
 
+/* Animações sequenciais para cada ícone */
+.dmenu .navigation a:nth-child(1) {
+  animation: piscarCode 8s infinite;
+  animation-delay: 0s;
+}
+
+.dmenu .navigation a:nth-child(2) {
+  animation: piscarRocket 8s infinite;
+  animation-delay: 1s;
+}
+
+.dmenu .navigation a:nth-child(3) {
+  animation: piscarFolder 8s infinite;
+  animation-delay: 2s;
+}
+
+.dmenu .navigation a:nth-child(4) {
+  animation: piscarSchool 8s infinite;
+  animation-delay: 3s;
+}
+
+.dmenu .navigation a:nth-child(5) {
+  animation: piscarRibbon 8s infinite;
+  animation-delay: 4s;
+}
+
+.dmenu .navigation a:nth-child(6) {
+  animation: piscarPerson 8s infinite;
+  animation-delay: 5s;
+}
+
+.dmenu .navigation a:nth-child(7) {
+  animation: piscarFlask 8s infinite;
+  animation-delay: 6s;
+}
+
+.dmenu .navigation a:nth-child(8) {
+  animation: piscarWhatsapp 8s infinite;
+  animation-delay: 7s;
+}
+
+/* Keyframes para cada cor */
+@keyframes piscarCode {
+  0%, 87.5%, 100% { box-shadow: 0 0 0 0 rgba(255, 100, 100, 0); }
+  12.5% { box-shadow: 0 0 8px 4px rgba(255, 100, 100, 1); }
+}
+
+@keyframes piscarRocket {
+  0%, 87.5%, 100% { box-shadow: 0 0 0 0 rgba(100, 200, 255, 0); }
+  12.5% { box-shadow: 0 0 8px 4px rgba(100, 200, 255, 1); }
+}
+
+@keyframes piscarFolder {
+  0%, 87.5%, 100% { box-shadow: 0 0 0 0 rgba(255, 200, 100, 0); }
+  12.5% { box-shadow: 0 0 8px 4px rgba(255, 200, 100, 1); }
+}
+
+@keyframes piscarSchool {
+  0%, 87.5%, 100% { box-shadow: 0 0 0 0 rgba(200, 100, 255, 0); }
+  12.5% { box-shadow: 0 0 8px 4px rgba(200, 100, 255, 1); }
+}
+
+@keyframes piscarRibbon {
+  0%, 87.5%, 100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+  12.5% { box-shadow: 0 0 8px 4px rgba(255, 215, 0, 1); }
+}
+
+@keyframes piscarPerson {
+  0%, 87.5%, 100% { box-shadow: 0 0 0 0 rgba(100, 255, 100, 0); }
+  12.5% { box-shadow: 0 0 8px 4px rgba(100, 255, 100, 1); }
+}
+
+@keyframes piscarFlask {
+  0%, 87.5%, 100% { box-shadow: 0 0 0 0 rgba(255, 100, 255, 0); }
+  12.5% { box-shadow: 0 0 8px 4px rgba(255, 100, 255, 1); }
+}
+
+@keyframes piscarWhatsapp {
+  0%, 87.5%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+  12.5% { box-shadow: 0 0 8px 4px rgba(37, 211, 102, 1); }
+}
+
 .dmenu .navigation a:hover {
   box-shadow: 0 0 24px white;
 }
@@ -65,28 +128,21 @@
   height: 50px;
   background: rgb(12, 26, 160);
   transform: translate(calc(70px * var(--x)), calc(70px * var(--y)));
-  border: 2px solid white;
-  transition: 0.2s linear;
 }
 
-.dmenu .navigation.actived a:hover {
-  border: 2px solid rgb(2, 182, 35);
+.dmenu .navigation.actived a:hover ion-icon {
+  color: #2dfc52;
+  filter: drop-shadow(0 0 2px #2dfc52) drop-shadow(0 0 5px #2dfc52) drop-shadow(0 0 15px #2dfc52);
 }
 
 .dmenu .navigation a ion-icon {
   transition: 0.5s;
   font-size: 1em;
   color: #fff;
-
 }
 
 .dmenu .navigation.actived a ion-icon {
-
   font-size: 5em;
-}
-
-.dmenu .navigation.actived a:hover ion-icon {
-  color: #2dfc52;
 }
 
 .close {
@@ -109,25 +165,26 @@
   pointer-events: initial;
   transition-delay: 0.1s;
   background: rgb(134, 1, 1);
-  color: white;
   font-size: 47px;
   cursor: pointer;
 }
 
 .dmenu:has(.navigation.actived) {
-
   transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
   animation: none;
 }
 
+.dmenu:has(.navigation.actived) .navigation a {
+  animation: none !important;
+}
+
 .dmenu .navigation~.close ion-icon {
   font-size: 2em;
   scale: 0;
-  color: white;
+  color: #10131c;
   transition: 0.5s;
-
 }
 
 .dmenu .navigation.actived~.close ion-icon {
