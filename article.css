@@ -58,7 +58,7 @@ h2 {
 
 h3 {
     line-height: 40px;
-    color: rgb(3, 5, 117);
+    color: rgb(1, 221, 118);
 }
 
 h4 {
@@ -78,7 +78,7 @@ span{
 .inicio {
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     flex-direction: row;
 
@@ -127,6 +127,7 @@ span{
     flex-direction: row;
     gap: 2%;
     flex-wrap: wrap;
+    margin-bottom: 10px;
 }
 
 #btnlinkedin,
