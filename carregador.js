@@ -10,5 +10,5 @@ window.addEventListener("load", function () {
   setTimeout(() => {
     preloader.style.display = "none";
     portal.style.display = "none";
-  }, 5000); // 2000 milissegundos = 2 segundos
+  }, 3500); // 2000 milissegundos = 2 segundos
 });

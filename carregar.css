@@ -45,7 +45,7 @@
     border-radius: 50%;
     border-left-color: transparent;
     border-bottom-color: transparent;
-    animation: cssload-spin .88s infinite linear;
+    animation: cssload-spin .60s infinite linear;
 }
 
 @-webkit-keyframes cssload-spin {
@@ -78,13 +78,13 @@
     height: 700px;
     position: relative;
     transform-style: preserve-3d;
-    animation: openPortal 5s forwards;
+    animation: openPortal 3s forwards;
 
 }
 
 .portal h1 {
     font-size: 90px;
-    animation: openPortaltext 5s forwards;
+    animation: openPortaltext 3s forwards;
     color: rgb(255, 255, 255);
 }
 
@@ -93,11 +93,11 @@
     color: white;
 
     font-size: 40px;
-    animation: openPortaltext 5s forwards;
+    animation: openPortaltext 3s forwards;
 }
 
 .portal h3 {
-    animation: openPortaltext 5s forwards;
+    animation: openPortaltext 3s forwards;
     font-size: 16px;
 }
 
@@ -118,7 +118,7 @@
             rgba(0, 0, 0, 0.753) 30%,
             rgba(1, 34, 221, 0.274) 70%);
     border-radius: 50%;
-    animation: pulse 2s infinite alternate;
+    animation: pulse 3s infinite alternate;
 
 }
 
