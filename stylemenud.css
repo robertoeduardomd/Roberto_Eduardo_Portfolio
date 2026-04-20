@@ -80,43 +80,107 @@
 
 /* Keyframes para cada cor */
 @keyframes piscarCode {
-  0%, 87.5%, 100% { box-shadow: 0 0 0 0 rgba(255, 100, 100, 0); }
-  12.5% { box-shadow: 0 0 8px 4px rgba(255, 100, 100, 1); }
+
+  0%,
+  87.5%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 100, 100, 0);
+  }
+
+  12.5% {
+    box-shadow: 0 0 8px 4px rgba(255, 100, 100, 1);
+  }
 }
 
 @keyframes piscarRocket {
-  0%, 87.5%, 100% { box-shadow: 0 0 0 0 rgba(100, 200, 255, 0); }
-  12.5% { box-shadow: 0 0 8px 4px rgba(100, 200, 255, 1); }
+
+  0%,
+  87.5%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(100, 200, 255, 0);
+  }
+
+  12.5% {
+    box-shadow: 0 0 8px 4px rgba(100, 200, 255, 1);
+  }
 }
 
 @keyframes piscarFolder {
-  0%, 87.5%, 100% { box-shadow: 0 0 0 0 rgba(255, 200, 100, 0); }
-  12.5% { box-shadow: 0 0 8px 4px rgba(255, 200, 100, 1); }
+
+  0%,
+  87.5%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 200, 100, 0);
+  }
+
+  12.5% {
+    box-shadow: 0 0 8px 4px rgba(255, 200, 100, 1);
+  }
 }
 
 @keyframes piscarSchool {
-  0%, 87.5%, 100% { box-shadow: 0 0 0 0 rgba(200, 100, 255, 0); }
-  12.5% { box-shadow: 0 0 8px 4px rgba(200, 100, 255, 1); }
+
+  0%,
+  87.5%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(200, 100, 255, 0);
+  }
+
+  12.5% {
+    box-shadow: 0 0 8px 4px rgba(200, 100, 255, 1);
+  }
 }
 
 @keyframes piscarRibbon {
-  0%, 87.5%, 100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
-  12.5% { box-shadow: 0 0 8px 4px rgba(255, 215, 0, 1); }
+
+  0%,
+  87.5%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+  }
+
+  12.5% {
+    box-shadow: 0 0 8px 4px rgba(255, 215, 0, 1);
+  }
 }
 
 @keyframes piscarPerson {
-  0%, 87.5%, 100% { box-shadow: 0 0 0 0 rgba(100, 255, 100, 0); }
-  12.5% { box-shadow: 0 0 8px 4px rgba(100, 255, 100, 1); }
+
+  0%,
+  87.5%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(100, 255, 100, 0);
+  }
+
+  12.5% {
+    box-shadow: 0 0 8px 4px rgba(100, 255, 100, 1);
+  }
 }
 
 @keyframes piscarFlask {
-  0%, 87.5%, 100% { box-shadow: 0 0 0 0 rgba(255, 100, 255, 0); }
-  12.5% { box-shadow: 0 0 8px 4px rgba(255, 100, 255, 1); }
+
+  0%,
+  87.5%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 100, 255, 0);
+  }
+
+  12.5% {
+    box-shadow: 0 0 8px 4px rgba(255, 100, 255, 1);
+  }
 }
 
 @keyframes piscarWhatsapp {
-  0%, 87.5%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-  12.5% { box-shadow: 0 0 8px 4px rgba(37, 211, 102, 1); }
+
+  0%,
+  87.5%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+
+  12.5% {
+    box-shadow: 0 0 8px 4px rgba(37, 211, 102, 1);
+  }
 }
 
 .dmenu .navigation a:hover {
@@ -128,6 +192,10 @@
   height: 50px;
   background: rgb(12, 26, 160);
   transform: translate(calc(70px * var(--x)), calc(70px * var(--y)));
+  border: 2px solid white;
+
+  transition: 0.2s linear;
+
 }
 
 .dmenu .navigation.actived a:hover ion-icon {

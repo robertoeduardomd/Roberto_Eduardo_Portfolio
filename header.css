@@ -116,7 +116,7 @@ header {
 }
 
 .menu ul li:hover a {
-    text-shadow: 0 2px 2px rgb(1, 221, 118);
+    
     color: white;
 }
 
