@@ -195,7 +195,6 @@
   border: 2px solid white;
 
   transition: 0.2s linear;
-
 }
 
 .dmenu .navigation.actived a:hover ion-icon {
@@ -242,6 +241,11 @@
   left: 50%;
   top: 50%;
   animation: none;
+}
+
+.dmenu .navigation.actived::before {
+  opacity: 0;
+  transform: scale(0);
 }
 
 .dmenu:has(.navigation.actived) .navigation a {
