@@ -84,14 +84,14 @@ border: 3px solid #fff;
 z-index: 1;
 }
 
-.ulredes li a .icon {
+.ulredes li a svg {
 position: relative;
 color: #262626;
 transition: .5s;
 z-index: 3;
 }
 
-.ulredes li a:hover .icon {
+.ulredes li a:hover svg {
 color: #fff;
 transform: rotateY(360deg);
 }
