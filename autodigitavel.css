@@ -14,7 +14,7 @@
     text-align: start;
     font-size: 13px;
     font-weight: 800;
-    text-transform: uppercase;
+    text-transform: lowercase;
     color: black;
     white-space: nowrap;
     letter-spacing: 1px;
@@ -86,19 +86,19 @@
 @keyframes txtanimado {
 
     0%, 20% {
-        content: "Interfaces que fazem sentido";
+        content: "Interfaces com sentido";
     }
 
     21%, 40% {
-        content: "Sistemas pensados para escalar";
+        content: "Sistemas escalaveis";
     }
 
     41%, 60% {
-        content: "Código organizado e funcional";
+        content: "Código limpo e funcional";
     }
 
     61%, 80% {
-        content: "Experiência fluida do início ao fim";
+        content: "Jornada fluida do começo ao fim";
     }
 
     81%, 100% {
