@@ -722,39 +722,6 @@
         letter-spacing: 2px;
 
 
-
-    }
-
-
-
-    .projetos {
-
-        flex-direction: column;
-
-        gap: 30px;
-
-        padding: 0 30px;
-
-        align-items: center;
-
-    }
-
-
-
-    .proj {
-
-        width: 80%;
-
-        max-width: 350px;
-
-        height: 320px;
-
-        margin: 0 auto;
-
-    }
-
-
-
     .proj:hover {
 
         transform: scale(1.05);
