@@ -234,8 +234,12 @@
   pointer-events: initial;
   transition-delay: 0.1s;
   background: rgb(134, 1, 1);
+  color:white;
   font-size: 47px;
   cursor: pointer;
+}
+.close svg {
+  stroke: #fff !important;
 }
 
 .dmenu:has(.navigation.actived) {
