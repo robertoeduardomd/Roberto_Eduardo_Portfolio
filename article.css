@@ -108,7 +108,8 @@ span{
 }
 
 .imginicio {
-    margin-top: 10px;
+  
+    margin-top: 5px;
     position: relative;
     display: flex;
     align-items: center;

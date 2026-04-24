@@ -12,7 +12,7 @@
     display: flex;
     align-items: start;
     text-align: start;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 800;
     text-transform: lowercase;
     color: black;
@@ -85,23 +85,26 @@
 }
 @keyframes txtanimado {
 
+ 
+
     0%, 20% {
-        content: "Interfaces com sentido";
+        content: "Analiso jornadas e identifico atritos";
     }
 
     21%, 40% {
-        content: "Sistemas escalaveis";
+        content: "Simplifico fluxos de navegação";
     }
 
     41%, 60% {
-        content: "Código limpo e funcional";
+        content: "Transformo análise em código funcional";
     }
 
     61%, 80% {
-        content: "Jornada fluida do começo ao fim";
+        content: "Crio experiências claras e intuitivas";
     }
 
     81%, 100% {
-        content: "Tecnologia aplicada com propósito";
+        content: "UX aplicado na prática, não só teoria";
     }
+
 }
