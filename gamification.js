@@ -134,6 +134,10 @@ class PortfolioGamification {
     this.currentSection = sectionId;
     const sectionData = this.progressData[sectionId];
 
+    if (!sectionData) {
+      return;
+    }
+
     if (!sectionData.viewed) {
       // Iniciar timer para contagem de 3 segundos
       this.sectionTimer = setTimeout(() => {
@@ -147,6 +151,9 @@ class PortfolioGamification {
 
   completeSectionView(sectionId) {
     const sectionData = this.progressData[sectionId];
+    if (!sectionData) {
+      return;
+    }
     sectionData.viewed = true;
     sectionData.viewTime = this.requiredViewTime;
 
@@ -168,6 +175,9 @@ class PortfolioGamification {
 
   trackProjectClick(projectIndex) {
     const projectsSection = this.progressData["proje"];
+    if (!projectsSection || !projectsSection.projectsViewed) {
+      return;
+    }
     if (!projectsSection.projectsViewed.includes(projectIndex)) {
       projectsSection.projectsViewed.push(projectIndex);
 
@@ -183,11 +193,17 @@ class PortfolioGamification {
 
   checkSectionCompletion(sectionId) {
     const sectionData = this.progressData[sectionId];
+    if (!sectionData) {
+      return;
+    }
     const section = this.sections.find((s) => s.id === sectionId);
 
     if (section?.hasProjects) {
       // Seção com projetos: verificar se todos foram clicados
-      if (sectionData.projectsViewed.length >= this.totalProjects) {
+      if (
+        sectionData.projectsViewed &&
+        sectionData.projectsViewed.length >= this.totalProjects
+      ) {
         sectionData.completed = true;
       }
     } else {
@@ -208,7 +224,9 @@ class PortfolioGamification {
       if (section.hasProjects) {
         // Seção com projetos: cada projeto visitado vale 1 ponto
         totalPoints += this.totalProjects;
-        earnedPoints += sectionData.projectsViewed.length;
+        earnedPoints += sectionData.projectsViewed
+          ? sectionData.projectsViewed.length
+          : 0;
       } else {
         // Outras seções: vale 1 ponto se completada
         totalPoints += 1;
@@ -290,7 +308,11 @@ class PortfolioGamification {
     } else if (sectionData.viewed) {
       if (section.hasProjects) {
         const projectProgress = Math.round(
-          (sectionData.projectsViewed.length / this.totalProjects) * 100,
+          ((sectionData.projectsViewed
+            ? sectionData.projectsViewed.length
+            : 0) /
+            this.totalProjects) *
+            100,
         );
         progress.textContent = `${projectProgress}%`;
       } else {
@@ -343,7 +365,10 @@ class PortfolioGamification {
       projectText.className = "project-name";
       projectText.textContent = projectName;
 
-      if (sectionData.projectsViewed.includes(index)) {
+      if (
+        sectionData.projectsViewed &&
+        sectionData.projectsViewed.includes(index)
+      ) {
         projectIcon.classList.add("explored");
       } else {
         projectIcon.classList.add("unexplored");
