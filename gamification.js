@@ -24,6 +24,7 @@ class PortfolioGamification {
     this.sectionTimer = null;
     this.requiredViewTime = 3000; // 3 segundos
     this.totalProjects = 7; // Total de projetos na seção
+    this.hasShownCompletionMessage = false; // Controle de mensagem de conclusão
 
     this.init();
   }
@@ -105,7 +106,16 @@ class PortfolioGamification {
       const elementTop = rect.top + window.scrollY;
       const elementBottom = elementTop + rect.height;
 
-      if (scrollPosition >= elementTop && scrollPosition <= elementBottom) {
+      // Para o footer, usar uma lógica mais flexível
+      const isFooter = section.id === "contato";
+      const isInFooterView =
+        isFooter &&
+        window.scrollY + window.innerHeight >= document.body.offsetHeight - 100;
+
+      if (
+        (scrollPosition >= elementTop && scrollPosition <= elementBottom) ||
+        isInFooterView
+      ) {
         if (this.currentSection !== section.id) {
           this.enterSection(section.id);
         }
@@ -189,12 +199,26 @@ class PortfolioGamification {
   }
 
   calculateOverallProgress() {
-    const totalSections = this.sections.length;
-    const completedSections = this.sections.filter(
-      (section) => this.progressData[section.id].completed,
-    ).length;
+    let totalPoints = 0;
+    let earnedPoints = 0;
 
-    return Math.round((completedSections / totalSections) * 100);
+    this.sections.forEach((section) => {
+      const sectionData = this.progressData[section.id];
+
+      if (section.hasProjects) {
+        // Seção com projetos: cada projeto visitado vale 1 ponto
+        totalPoints += this.totalProjects;
+        earnedPoints += sectionData.projectsViewed.length;
+      } else {
+        // Outras seções: vale 1 ponto se completada
+        totalPoints += 1;
+        if (sectionData.completed) {
+          earnedPoints += 1;
+        }
+      }
+    });
+
+    return Math.round((earnedPoints / totalPoints) * 100);
   }
 
   updateUI() {
@@ -202,6 +226,12 @@ class PortfolioGamification {
     const donutProgress = document.querySelector(".donut-progress");
     const percentageText = document.querySelector(".percentage");
     const sectionsList = document.querySelector(".sections-list");
+
+    // Verificar se atingiu 100% pela primeira vez
+    if (percentage === 100 && !this.hasShownCompletionMessage) {
+      this.showCompletionMessage();
+      this.hasShownCompletionMessage = true;
+    }
 
     // Atualizar gráfico de rosca
     if (donutProgress) {
@@ -241,48 +271,92 @@ class PortfolioGamification {
     const item = document.createElement("div");
     item.className = "section-item";
 
+    // Criar container principal para nome e progresso
+    const headerDiv = document.createElement("div");
+    headerDiv.className = "section-header";
+    headerDiv.style.display = "flex";
+    headerDiv.style.justifyContent = "space-between";
+    headerDiv.style.alignItems = "center";
+
     const nameDiv = document.createElement("div");
     nameDiv.className = "section-name";
     nameDiv.textContent = section.name;
-
-    const statusDiv = document.createElement("div");
-    statusDiv.className = "section-status";
-
-    const icon = document.createElement("div");
-    icon.className = "status-icon";
 
     const progress = document.createElement("span");
     progress.className = "section-progress";
 
     if (sectionData.completed) {
-      icon.classList.add("completed");
       progress.textContent = "100%";
     } else if (sectionData.viewed) {
       if (section.hasProjects) {
         const projectProgress = Math.round(
           (sectionData.projectsViewed.length / this.totalProjects) * 100,
         );
-        icon.classList.add("in-progress");
         progress.textContent = `${projectProgress}%`;
       } else {
-        icon.classList.add("completed");
         progress.textContent = "100%";
       }
     } else if (this.currentSection === section.id && this.sectionTimer) {
-      icon.classList.add("in-progress");
       progress.textContent = "...";
     } else {
-      icon.classList.add("locked");
       progress.textContent = "0%";
     }
 
-    statusDiv.appendChild(icon);
-    statusDiv.appendChild(progress);
+    headerDiv.appendChild(nameDiv);
+    headerDiv.appendChild(progress);
+    item.appendChild(headerDiv);
 
-    item.appendChild(nameDiv);
-    item.appendChild(statusDiv);
+    // Se for a seção de projetos, adicionar lista de projetos individuais como árvore
+    if (section.hasProjects) {
+      const projectsList = this.createProjectsList(sectionData);
+      item.appendChild(projectsList);
+    }
 
     return item;
+  }
+
+  createProjectsList(sectionData) {
+    const projectsContainer = document.createElement("div");
+    projectsContainer.className = "projects-list";
+
+    const projectNames = [
+      "Notas do Instrumento",
+      "Pizzaria Delivery",
+      "Instituto Henfil",
+      "Clínica Odontoestética",
+      "Controle Financeiro",
+      "Hospital",
+      "Lembrete",
+    ];
+
+    projectNames.forEach((projectName, index) => {
+      const projectItem = document.createElement("div");
+      projectItem.className = "project-item";
+
+      const projectInfo = document.createElement("div");
+      projectInfo.className = "project-info";
+
+      const projectIcon = document.createElement("div");
+      projectIcon.className = "project-icon";
+
+      const projectText = document.createElement("span");
+      projectText.className = "project-name";
+      projectText.textContent = projectName;
+
+      if (sectionData.projectsViewed.includes(index)) {
+        projectIcon.classList.add("explored");
+      } else {
+        projectIcon.classList.add("unexplored");
+      }
+
+      projectInfo.appendChild(projectText);
+      projectInfo.appendChild(projectIcon);
+      projectItem.appendChild(projectInfo);
+
+      projectsContainer.appendChild(projectItem);
+    });
+
+    return projectsContainer;
   }
 
   showSectionProgress(sectionId, inProgress) {
@@ -361,6 +435,74 @@ class PortfolioGamification {
       this.updateUI();
       this.showNotification("Progresso resetado!");
     }
+  }
+
+  showProjectVisitedNotification(projectIndex) {
+    const projectNames = [
+      "Notas do Instrumento",
+      "Pizzaria Delivery",
+      "Instituto Henfil",
+      "Clínica Odontoestética",
+      "Controle Financeiro",
+      "Hospital",
+      "Lembrete",
+    ];
+
+    const projectName =
+      projectNames[projectIndex] || `Projeto ${projectIndex + 1}`;
+    const projectsViewed = this.progressData["proje"].projectsViewed.length;
+
+    this.showNotification(
+      `🚀 Projeto visitado: ${projectName} (${projectsViewed}/${this.totalProjects})`,
+    );
+  }
+
+  showCompletionMessage() {
+    const completionNotification = document.createElement("div");
+    completionNotification.style.cssText = `
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(135deg, rgb(1, 221, 118), rgb(0, 33, 105));
+      color: white;
+      padding: 30px 40px;
+      border-radius: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      z-index: 10000;
+      box-shadow: 0 10px 40px rgba(0, 33, 105, 0.3);
+      animation: completionPulse 0.6s ease;
+    `;
+    completionNotification.innerHTML = `
+      <div style="margin-bottom: 15px; font-size: 24px;">🎉</div>
+      <div>Parabéns!</div>
+      <div style="margin-top: 10px; font-size: 16px; font-weight: normal;">Obrigado por explorar meu portfólio!</div>
+    `;
+
+    // Adicionar animação
+    const style = document.createElement("style");
+    style.textContent = `
+      @keyframes completionPulse {
+        0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+        50% { transform: translate(-50%, -50%) scale(1.05); opacity: 1; }
+        100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+      }
+    `;
+    document.head.appendChild(style);
+
+    document.body.appendChild(completionNotification);
+
+    // Remover após 10 segundos
+    setTimeout(() => {
+      completionNotification.style.animation =
+        "completionPulse 0.6s ease reverse";
+      setTimeout(() => {
+        completionNotification.remove();
+        style.remove();
+      }, 600);
+    }, 10000);
   }
 
   // Métodos públicos para debug
