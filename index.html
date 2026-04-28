@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="itensgirando.css" />
     <link rel="stylesheet" href="responsividade.css" />
     <link rel="stylesheet" href="slide.css" />
+    <link rel="stylesheet" href="gamification.css" />
       </head>
   <body>
     <div class="preloader">
@@ -149,6 +150,26 @@
 
       </div>
     </header>
+
+    <!-- Gráfico de Rosca de Progresso -->
+    <div class="progress-donut" id="progressDonut">
+      <div class="donut-container">
+        <svg class="donut-chart" width="80" height="80">
+          <circle class="donut-background" cx="40" cy="40" r="35"></circle>
+          <circle class="donut-progress" cx="40" cy="40" r="35"></circle>
+        </svg>
+        <div class="donut-text">
+          <span class="percentage">0%</span>
+          <span class="label">Explorado</span>
+        </div>
+      </div>
+      <div class="progress-tooltip">
+        <div class="tooltip-content">
+          <h4>Seu Progresso</h4>
+          <div class="sections-list"></div>
+        </div>
+      </div>
+    </div>
 
     <article>
       <section>
@@ -988,7 +1009,6 @@ Como <span>UX Engineer</span>, conecto desenvolvimento à experiência do usuár
       </li>
     </ul>
     </div>
-</article>
 </footer>
       <script src="/tecnologias.js"></script>
       <script src="/colapsavel.js"></script>
@@ -999,7 +1019,8 @@ Como <span>UX Engineer</span>, conecto desenvolvimento à experiência do usuár
       <script src="/itensgirando.js"></script>
       <script src="/mododark.js"></script>
       <script src="./script.js"></script>
-<script src="scriptdmenu.js"/></script>
-<script src="landbotscript.js"/></script>
-        </body>
+<script src="scriptdmenu.js"></script>
+<script src="landbotscript.js"></script>
+<script src="gamification.js"></script>
+</body>
 </html>

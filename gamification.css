@@ -1,0 +1,283 @@
+/* Gráfico de Rosca de Progresso */
+.progress-donut {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1000;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.progress-donut:hover {
+  transform: scale(1.05);
+}
+
+.donut-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(0, 33, 105, 0.2);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donut-chart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+}
+
+.donut-background {
+  fill: none;
+  stroke: rgba(0, 33, 105, 0.1);
+  stroke-width: 8;
+}
+
+.donut-progress {
+  fill: none;
+  stroke: rgb(1, 221, 118);
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  transition: stroke-dashoffset 0.5s ease, stroke 0.3s ease;
+}
+
+.donut-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.percentage {
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(0, 33, 105);
+  line-height: 1;
+}
+
+.label {
+  font-size: 10px;
+  color: rgb(0, 33, 105);
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+/* Tooltip */
+.progress-tooltip {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 32px rgba(0, 33, 105, 0.15);
+  backdrop-filter: blur(20px);
+  min-width: 250px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(1, 221, 118, 0.2);
+}
+
+.progress-donut:hover .progress-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.tooltip-content h4 {
+  margin: 0 0 12px 0;
+  color: rgb(0, 33, 105);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sections-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.section-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.section-item:hover {
+  background-color: rgba(1, 221, 118, 0.1);
+}
+
+.section-name {
+  color: rgb(0, 33, 105);
+  font-weight: 500;
+}
+
+.section-status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.status-icon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ddd;
+}
+
+.status-icon.completed {
+  background-color: rgb(1, 221, 118);
+  box-shadow: 0 0 8px rgba(1, 221, 118, 0.4);
+}
+
+.status-icon.in-progress {
+  background-color: rgba(1, 221, 118, 0.5);
+  animation: pulse 2s infinite;
+}
+
+.status-icon.locked {
+  background-color: rgba(0, 33, 105, 0.2);
+}
+
+.section-progress {
+  font-size: 10px;
+  color: rgb(0, 33, 105);
+  font-weight: 600;
+}
+
+/* Animações */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(1, 221, 118, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(1, 221, 118, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(1, 221, 118, 0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .progress-donut {
+    top: 70px;
+    right: 15px;
+  }
+  
+  .donut-container {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .donut-chart {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .donut-background,
+  .donut-progress {
+    stroke-width: 6;
+  }
+  
+  .percentage {
+    font-size: 16px;
+  }
+  
+  .label {
+    font-size: 9px;
+  }
+  
+  .progress-tooltip {
+    right: -50px;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .progress-donut {
+    top: 60px;
+    right: 10px;
+  }
+  
+  .donut-container {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .donut-chart {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .donut-background,
+  .donut-progress {
+    stroke-width: 5;
+  }
+  
+  .percentage {
+    font-size: 14px;
+  }
+  
+  .label {
+    font-size: 8px;
+  }
+  
+  .progress-tooltip {
+    right: -80px;
+    min-width: 180px;
+    padding: 12px;
+  }
+}
+
+/* Tema escuro */
+body.dark-theme .donut-container {
+  background: rgba(0, 33, 105, 0.95);
+}
+
+body.dark-theme .donut-progress {
+  stroke: rgb(1, 221, 118);
+}
+
+body.dark-theme .percentage,
+body.dark-theme .label,
+body.dark-theme .tooltip-content h4,
+body.dark-theme .section-name {
+  color: white;
+}
+
+body.dark-theme .progress-tooltip {
+  background: rgba(0, 33, 105, 0.98);
+  border: 1px solid rgba(1, 221, 118, 0.3);
+}
+
+body.dark-theme .section-item:hover {
+  background-color: rgba(1, 221, 118, 0.2);
+}
+
+body.dark-theme .section-progress {
+  color: rgb(1, 221, 118);
+}
+
+body.dark-theme .donut-background {
+  stroke: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .status-icon.locked {
+  background-color: rgba(255, 255, 255, 0.2);
+}

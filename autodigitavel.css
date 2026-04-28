@@ -83,28 +83,34 @@
         border-left: 2px solid white;
     }
 }
+
 @keyframes txtanimado {
 
- 
 
-    0%, 20% {
+
+    0%,
+    20% {
         content: "Analiso jornadas e identifico atritos";
     }
 
-    21%, 40% {
+    21%,
+    40% {
         content: "Simplifico fluxos de navegação";
     }
 
-    41%, 60% {
+    41%,
+    60% {
         content: "Transformo análise em código funcional";
     }
 
-    61%, 80% {
+    61%,
+    80% {
         content: "Crio experiências claras e intuitivas";
     }
 
-    81%, 100% {
-        content: "UX aplicado na prática, não só teoria";
+    81%,
+    100% {
+        content: "Crio jornadas mais envolventes com gamificação";
     }
 
 }
