@@ -211,7 +211,7 @@ renderTooltip() {
   }
   showNotification2(msg) {
     const note = document.createElement("div");
-    note.style.cssText = `position:fixed; top:100px; right:120px; background:#000 ; #01dd76;; padding:12px 20px; border-radius:8px; font-weight:bold; z-index:10001; box-shadow:0 5px 15px rgba(0,0,0,0.2); animation: slideIn 0.3s ease;`;
+    note.style.cssText = `position:fixed; top:100px; right:120px; background:#000 ; colo:#01dd76; padding:12px 20px; border-radius:8px; font-weight:bold; z-index:10001; box-shadow:0 5px 15px rgba(0,0,0,0.2); animation: slideIn 0.3s ease;`;
     note.textContent = msg;
     document.body.appendChild(note);
     setTimeout(() => note.remove(), 10000);
