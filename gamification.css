@@ -116,7 +116,11 @@
   font-weight: 600;
   color: rgb(0, 33, 105);
 }
-.section-header span{
+.project-item{
+display:flex;
+justify-content:space-between;
+}
+.section-header span, .projects-list span{
   color: rgb(0, 33, 105)!important;
 }
 .projects-list {

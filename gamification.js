@@ -146,8 +146,8 @@ class PortfolioGamification {
         html += `<div class="projects-list">` + 
           this.projectNames.map((name, i) => `
             <div class="project-item">
+            <span>${name}</span>
               <div class="project-icon ${data.projectsViewed.includes(i) ? 'explored' : ''}"></div>
-              <span>${name}</span>
             </div>
           `).join("") + `</div>`;
       }
