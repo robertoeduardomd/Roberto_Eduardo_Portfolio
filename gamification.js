@@ -147,7 +147,7 @@ calculateProgress() {
     if (percent === 100 && !localStorage.getItem("portfolioAgradecimentoEnviado")) {
       // Pequeno delay para a notificação não atropelar a última seção explorada
       setTimeout(() => {
-        this.showNotification("🎉 Parabéns! Você explorou meu portfólio por completo!");
+        this.showNotification2("🎉 Parabéns! Você explorou por completo!");
         // Salva que já agradeceu para não repetir sempre que carregar a página
         localStorage.setItem("portfolioAgradecimentoEnviado", "true");
       }, 1000);
@@ -208,6 +208,13 @@ renderTooltip() {
     note.textContent = msg;
     document.body.appendChild(note);
     setTimeout(() => note.remove(), 3000);
+  }
+  showNotification2(msg) {
+    const note = document.createElement("div");
+    note.style.cssText = `position:fixed; top:100px; right:120px; background:#000 ; #01dd76;; padding:12px 20px; border-radius:8px; font-weight:bold; z-index:10001; box-shadow:0 5px 15px rgba(0,0,0,0.2); animation: slideIn 0.3s ease;`;
+    note.textContent = msg;
+    document.body.appendChild(note);
+    setTimeout(() => note.remove(), 10000);
   }
 }
 
