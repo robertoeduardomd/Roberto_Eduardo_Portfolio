@@ -1,4 +1,6 @@
-/* Container Principal */
+/* ============================================================
+   WIDGET DE PROGRESSO (DONUT)
+   ============================================================ */
 .progress-donut {
   position: fixed;
   top: 100px;
@@ -25,7 +27,6 @@
   justify-content: center;
 }
 
-/* Gráfico SVG Otimizado */
 .donut-chart {
   position: absolute;
   top: 0;
@@ -46,7 +47,6 @@
   stroke: rgb(1, 221, 118);
   stroke-width: 7;
   stroke-linecap: round;
-  /* Circunferência para r=35 é ~219.9 */
   stroke-dasharray: 219.9;
   stroke-dashoffset: 219.9;
   transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.3s ease;
@@ -73,11 +73,11 @@
   font-weight: 600;
 }
 
-/* Tooltip Inteligente */
+/* Tooltip */
 .progress-tooltip {
   position: absolute;
   top: 0;
-  right: 110%; /* Abre para a esquerda no desktop */
+  right: 110%;
   background: rgba(255, 255, 255, 0.98);
   border-radius: 12px;
   padding: 16px;
@@ -97,16 +97,16 @@
   transform: translateX(0);
 }
 
-/* Itens de Seção e Projetos */
 .tooltip-content h4 {
   margin: 0 0 12px 0;
-  color: rgb(0, 33, 105);
+  color: rgb(0, 33, 105)!important;
   font-size: 14px;
 }
 
 .section-item {
   padding: 8px 0;
   border-bottom: 1px solid rgba(0, 33, 105, 0.05);
+  
 }
 
 .section-header {
@@ -116,11 +116,14 @@
   font-weight: 600;
   color: rgb(0, 33, 105);
 }
-
+.section-header span{
+  color: rgb(0, 33, 105)!important;
+}
 .projects-list {
+  color: rgb(0, 33, 105)!important;
   margin-top: 6px;
   padding-left: 10px;
-  border-left: 2px solid rgba(1, 221, 118, 0.3);
+  border-left: 2px solid rgb(0, 33, 105)!important;
 }
 
 .project-item {
@@ -139,24 +142,110 @@
 }
 
 .project-icon.explored {
-  background-color: rgb(1, 221, 118);
+  background-color: rgb(0, 33, 105);
   box-shadow: 0 0 5px rgba(1, 221, 118, 0.5);
 }
 
-/* Animações e Temas */
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); box-shadow: 0 0 20px rgba(1, 221, 118, 0.6); }
-  100% { transform: scale(1); }
+/* ============================================================
+   NOTIFICAÇÕES (TOASTS) - CONSERTADO
+   ============================================================ */
+.toast-notification {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #002169 !important;
+
+  /* CORREÇÃO: Força o texto a ficar azul escuro e visível */
+  color: white !important;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 14px;
+  z-index: 10001;
+  box-shadow: 0 10px 30px rgba(0, 33, 105, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  pointer-events: none;
+
+  animation: slideInNotify 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s ease;
 }
 
-body.dark-theme .donut-container { background: #1a1a2e; }
-body.dark-theme .progress-tooltip { background: #1a1a2e; border-color: #01dd76; }
-body.dark-theme .percentage, body.dark-theme .label, body.dark-theme .section-name { color: white; }
+/* Garante que o texto dentro do span acompanhe a cor */
+.toast-notification span {
+  color: #ffffff !important;
+}
 
-/* Mobile */
+@keyframes slideInNotify {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.toast-fade-out {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* ============================================================
+   TEMAS E RESPONSIVIDADE
+   ============================================================ */
+body.dark-theme .donut-container {
+  background: #1a1a2e;
+}
+
+body.dark-theme .progress-tooltip {
+  background: #1a1a2e;
+  border-color: #01dd76;
+}
+
+body.dark-theme .percentage,
+body.dark-theme .label,
+body.dark-theme .section-name {
+  color: white;
+}
+
 @media (max-width: 768px) {
-  .progress-donut { top: auto; bottom: 20px; right: 20px; }
-  .progress-tooltip { right: 0; bottom: 110%; top: auto; transform: translateY(10px); }
-  .progress-donut:hover .progress-tooltip { transform: translateY(0); }
+  .progress-donut {
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  /* Notificação no Mobile: Lado ESQUERDO do botão sem cobrir */
+  .toast-notification {
+    bottom: 20px;
+    right: 110px;
+    /* Distância para ficar ao lado do botão de 80px + margem */
+    left: auto;
+    padding: 10px 15px;
+    font-size: 12px;
+    animation: slideInNotifyMobile 0.4s ease-out;
+  }
+
+  .progress-tooltip {
+    right: 0;
+    bottom: 110%;
+    top: auto;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes slideInNotifyMobile {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

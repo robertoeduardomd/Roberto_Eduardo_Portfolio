@@ -67,18 +67,23 @@ class PortfolioGamification {
     }
   }
 
-  enterSection(id) {
+ enterSection(id) {
     if (this.sectionTimer) clearTimeout(this.sectionTimer);
     this.currentSection = id;
     const data = this.progressData[id];
 
-    if (data && !data.viewed) {
+    // Busca o objeto da seção inteira para pegar o nome amigável (.name)
+    const sectionInfo = this.sections.find(s => s.id === id);
+
+    if (data && !data.viewed && sectionInfo) {
       this.sectionTimer = setTimeout(() => {
         data.viewed = true;
-        if (!this.sections.find(s => s.id === id).hasProjects) data.completed = true;
+        if (!sectionInfo.hasProjects) data.completed = true;
         this.saveProgress();
         this.updateUI();
-        this.showNotification(`Seção ${id} explorada!`);
+        
+        // CORREÇÃO: Agora usa sectionInfo.name (ex: "Experiências") 
+        this.showNotification(`Seção ${sectionInfo.name} explorada!`);
       }, this.requiredViewTime);
     }
   }
@@ -128,7 +133,7 @@ class PortfolioGamification {
 
     list.innerHTML = this.sections.map(s => {
       const data = this.progressData[s.id];
-      const status = data.completed ? "✅" : (data.viewed ? "⏳" : "🔒");
+      const status = data.completed ? "✅" : (data.viewed ? "⏳" : "⏳");
       
       let html = `
         <div class="section-item">
@@ -154,7 +159,7 @@ class PortfolioGamification {
 
   showNotification(msg) {
     const note = document.createElement("div");
-    note.style.cssText = `position:fixed; bottom:20px; left:20px; background:#01dd76; color:#002169; padding:12px 20px; border-radius:8px; font-weight:bold; z-index:10001; box-shadow:0 5px 15px rgba(0,0,0,0.2); animation: slideIn 0.3s ease;`;
+    note.style.cssText = `position:fixed; bottom:20px; right:20px; background:#002169 ; color:#fff; padding:12px 20px; border-radius:8px; font-weight:bold; z-index:10001; box-shadow:0 5px 15px rgba(0,0,0,0.2); animation: slideIn 0.3s ease;`;
     note.textContent = msg;
     document.body.appendChild(note);
     setTimeout(() => note.remove(), 3000);
