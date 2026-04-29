@@ -99,9 +99,26 @@ class PortfolioGamification {
     }
   }
 
-  calculateProgress() {
+calculateProgress() {
     let total = 0, earned = 0;
+    
+    // IDs que devem ser tratados como uma única entrada
+    const skillIds = ["habilidades", "habilidadesmb"];
+    let skillsHandled = false;
+
     this.sections.forEach(s => {
+      // Lógica Especial para Habilidades (Trata as duas como uma só)
+      if (skillIds.includes(s.id)) {
+        if (!skillsHandled) {
+          total += 1; // Só adiciona 1 ao total geral, independente de existirem duas seções
+          const isEitherCompleted = skillIds.some(id => this.progressData[id].completed);
+          if (isEitherCompleted) earned += 1;
+          skillsHandled = true;
+        }
+        return; // Pula para a próxima iteração para não contar a segunda seção de habilidade
+      }
+
+      // Lógica padrão para as demais seções
       const data = this.progressData[s.id];
       if (s.hasProjects) {
         total += this.totalProjects;
@@ -114,7 +131,7 @@ class PortfolioGamification {
     return Math.round((earned / total) * 100);
   }
 
-  updateUI() {
+ updateUI() {
     const percent = this.calculateProgress();
     const donut = document.querySelector(".donut-progress");
     const text = document.querySelector(".percentage");
@@ -123,22 +140,51 @@ class PortfolioGamification {
       const circumference = 2 * Math.PI * 35;
       donut.style.strokeDashoffset = circumference - (percent / 100) * circumference;
     }
+    
     if (text) text.textContent = `${percent}%`;
+
+    // Lógica para a notificação de 100%
+    if (percent === 100 && !localStorage.getItem("portfolioAgradecimentoEnviado")) {
+      // Pequeno delay para a notificação não atropelar a última seção explorada
+      setTimeout(() => {
+        this.showNotification("🎉 Parabéns! Você explorou meu portfólio por completo!");
+        // Salva que já agradeceu para não repetir sempre que carregar a página
+        localStorage.setItem("portfolioAgradecimentoEnviado", "true");
+      }, 10000);
+    }
+
     this.renderTooltip();
   }
 
-  renderTooltip() {
+renderTooltip() {
     const list = document.querySelector(".sections-list");
     if (!list) return;
 
-    list.innerHTML = this.sections.map(s => {
-      const data = this.progressData[s.id];
+    // Filtramos para não mostrar "Habilidades Mobile" e "Desktop" separadamente
+    // Vamos manter apenas o ID "habilidades" como representante visual
+    const visibleSections = this.sections.filter(s => s.id !== "habilidadesmb");
+
+    list.innerHTML = visibleSections.map(s => {
+      let data = this.progressData[s.id];
+      let displayName = s.name;
+      
+      // Se for a seção de Habilidades, consolidamos o status
+      if (s.id === "habilidades") {
+        const mbData = this.progressData["habilidadesmb"];
+        const isCompleted = data.completed || mbData.completed;
+        const isViewed = data.viewed || mbData.viewed;
+        
+        // Criamos um estado visual único baseado no "OU"
+        data = { ...data, completed: isCompleted, viewed: isViewed };
+        displayName = "Habilidades"; // Nome unificado
+      }
+
       const status = data.completed ? "✅" : (data.viewed ? "⏳" : "⏳");
       
       let html = `
         <div class="section-item">
           <div class="section-header">
-            <span>${s.name}</span>
+            <span>${displayName}</span>
             <span>${status}</span>
           </div>`;
       
@@ -159,7 +205,7 @@ class PortfolioGamification {
 
   showNotification(msg) {
     const note = document.createElement("div");
-    note.style.cssText = `position:fixed; bottom:20px; right:20px; background:#002169 ; color:#fff; padding:12px 20px; border-radius:8px; font-weight:bold; z-index:10001; box-shadow:0 5px 15px rgba(0,0,0,0.2); animation: slideIn 0.3s ease;`;
+    note.style.cssText = `position:fixed; top:100px; right:120px; background:#002169 ; color:#fff; padding:12px 20px; border-radius:8px; font-weight:bold; z-index:10001; box-shadow:0 5px 15px rgba(0,0,0,0.2); animation: slideIn 0.3s ease;`;
     note.textContent = msg;
     document.body.appendChild(note);
     setTimeout(() => note.remove(), 3000);
