@@ -150,7 +150,7 @@ calculateProgress() {
         this.showNotification("🎉 Parabéns! Você explorou meu portfólio por completo!");
         // Salva que já agradeceu para não repetir sempre que carregar a página
         localStorage.setItem("portfolioAgradecimentoEnviado", "true");
-      }, 10000);
+      }, 1000);
     }
 
     this.renderTooltip();
@@ -160,21 +160,20 @@ renderTooltip() {
     const list = document.querySelector(".sections-list");
     if (!list) return;
 
-    // Filtramos para não mostrar "Habilidades Mobile" e "Desktop" separadamente
-    // Vamos manter apenas o ID "habilidades" como representante visual
+  
     const visibleSections = this.sections.filter(s => s.id !== "habilidadesmb");
 
     list.innerHTML = visibleSections.map(s => {
       let data = this.progressData[s.id];
       let displayName = s.name;
       
-      // Se for a seção de Habilidades, consolidamos o status
+     
       if (s.id === "habilidades") {
         const mbData = this.progressData["habilidadesmb"];
         const isCompleted = data.completed || mbData.completed;
         const isViewed = data.viewed || mbData.viewed;
         
-        // Criamos um estado visual único baseado no "OU"
+      
         data = { ...data, completed: isCompleted, viewed: isViewed };
         displayName = "Habilidades"; // Nome unificado
       }
