@@ -1,4 +1,4 @@
-/* Gráfico de Rosca de Progresso */
+/* Container Principal */
 .progress-donut {
   position: fixed;
   top: 100px;
@@ -25,34 +25,37 @@
   justify-content: center;
 }
 
+/* Gráfico SVG Otimizado */
 .donut-chart {
   position: absolute;
-  top:10px;
+  top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   transform: rotate(-90deg);
 }
 
 .donut-background {
   fill: none;
   stroke: rgba(0, 33, 105, 0.1);
-  stroke-width: 8;
+  stroke-width: 7;
 }
 
 .donut-progress {
   fill: none;
   stroke: rgb(1, 221, 118);
-  stroke-width: 8;
+  stroke-width: 7;
   stroke-linecap: round;
-  stroke-dasharray: 220;
-  stroke-dashoffset: 220;
-  transition: stroke-dashoffset 0.5s ease, stroke 0.3s ease;
+  /* Circunferência para r=35 é ~219.9 */
+  stroke-dasharray: 219.9;
+  stroke-dashoffset: 219.9;
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.3s ease;
 }
 
 .donut-text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   z-index: 1;
 }
 
@@ -67,512 +70,93 @@
   font-size: 10px;
   color: rgb(0, 33, 105);
   margin-top: 2px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
-/* Tooltip */
+/* Tooltip Inteligente */
 .progress-tooltip {
   position: absolute;
-  top: 100%;
-  right: 0;
-  margin-top: 10px;
+  top: 0;
+  right: 110%; /* Abre para a esquerda no desktop */
   background: rgba(255, 255, 255, 0.98);
   border-radius: 12px;
   padding: 16px;
   box-shadow: 0 8px 32px rgba(0, 33, 105, 0.15);
-  backdrop-filter: blur(20px);
-  min-width: 250px;
+  min-width: 260px;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-10px);
+  transform: translateX(10px);
   transition: all 0.3s ease;
   border: 1px solid rgba(1, 221, 118, 0.2);
+  pointer-events: none;
 }
 
 .progress-donut:hover .progress-tooltip {
   opacity: 1;
   visibility: visible;
-  transform: translate(-150px,0);
+  transform: translateX(0);
 }
 
+/* Itens de Seção e Projetos */
 .tooltip-content h4 {
   margin: 0 0 12px 0;
   color: rgb(0, 33, 105);
   font-size: 14px;
-  font-weight: 600;
-}
-
-.sections-list {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
 }
 
 .section-item {
-  display: flex;
-  align-items: center;
-
-
-  justify-content: space-between;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 12px;
-  transition: background-color 0.2s ease;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 33, 105, 0.05);
 }
 
-.section-item:hover {
-  background-color: rgba(1, 221, 118, 0.1);
-}
-
-.section-name {
-  color: rgb(0, 33, 105);
-  font-weight: 500;
-}
-
-.section-status {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.status-icon {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #ddd;
-}
-
-.status-icon.completed {
-  background-color: rgb(1, 221, 118);
-  box-shadow: 0 0 8px rgba(1, 221, 118, 0.4);
-}
-
-.status-icon.in-progress {
-  background-color: rgba(1, 221, 118, 0.5);
-  animation: pulse 2s infinite;
-}
-
-.status-icon.locked {
-  background-color: rgba(0, 33, 105, 0.2);
-}
-
-.section-progress {
-  font-size: 10px;
-  color: rgb(0, 33, 105);
-  font-weight: 600;
-}
-
-/* Estilos para lista de projetos */
-.projects-list {
-  margin-top: 8px;
-  padding-left: 12px;
-  border-left: 2px solid rgba(0, 33, 105, 0.1);
-  margin-right: auto;
-  text-align: left;
-}
-
-.project-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 4px 0;
-  font-size: 10px;
-  gap: 4px;
-}
-
-.project-info {
-  display: flex;
-
-  align-items: left;
-  gap: 6px;
-  flex: 1;
-}
-
-.project-icon {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: #ddd;
-  flex-shrink: 0;
-}
-
-.project-icon.explored {
-  background-color: rgb(1, 221, 118);
-  box-shadow: 0 0 4px rgba(1, 221, 118, 0.3);
-}
-
-.project-icon.unexplored {
-  background-color: rgba(0, 33, 105, 0.2);
-}
-
-.project-name {
-  color: rgb(0, 33, 105);
-  font-weight: 400;
-  font-size: 10px;
-}
-
-.project-status {
-  color: rgb(1, 221, 118);
-  font-weight: bold;
-  font-size: 12px;
-  margin-left: 8px;
-}
-
-.project-status.unexplored {
-  color: rgba(0, 33, 105, 0.3);
-}
-
-/* Estilos para header da seção */
 .section-header {
-  width: 100%;
-  margin-bottom: 4px;
-}
-
-/* Estilos para lista de projetos */
-.projects-list {
-  margin-top: 8px;
-  margin-left: 20px;
-  padding-left: 12px;
-  border-left: 2px solid rgba(0, 33, 105, 0.1);
-  text-align: left;
-  flex-direction: column;
-}
-
-.project-item {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 4px 0;
-  font-size: 10px;
-  gap: 4px;
-}
-
-.project-info {
-  display: flex;
-
-  align-items: left;
-  gap: 6px;
-  flex: 1;
-}
-
-.project-icon {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: #ddd;
-  flex-shrink: 0;
-}
-
-.project-icon.explored {
-  background-color: rgb(1, 221, 118);
-  box-shadow: 0 0 4px rgba(1, 221, 118, 0.3);
-}
-
-.project-icon.unexplored {
-  background-color: rgba(0, 33, 105, 0.2);
-}
-
-.project-name {
-  color: rgb(0, 33, 105);
-  font-weight: 400;
-  font-size: 10px;
-}
-
-.project-status {
-  color: rgb(1, 221, 118);
-  font-weight: bold;
+  justify-content: space-between;
   font-size: 12px;
-  margin-left: 8px;
+  font-weight: 600;
+  color: rgb(0, 33, 105);
 }
 
-.project-status.unexplored {
-  color: rgba(0, 33, 105, 0.3);
+.projects-list {
+  margin-top: 6px;
+  padding-left: 10px;
+  border-left: 2px solid rgba(1, 221, 118, 0.3);
 }
 
-/* Animações */
+.project-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  padding: 2px 0;
+}
+
+.project-icon {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ddd;
+}
+
+.project-icon.explored {
+  background-color: rgb(1, 221, 118);
+  box-shadow: 0 0 5px rgba(1, 221, 118, 0.5);
+}
+
+/* Animações e Temas */
 @keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(1, 221, 118, 0.4);
-  }
-
-
-  70% {
-    box-shadow: 0 0 0 6px rgba(1, 221, 118, 0);
-  }
-
-
-  100% {
-    box-shadow: 0 0 0 0 rgba(1, 221, 118, 0);
-  }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); box-shadow: 0 0 20px rgba(1, 221, 118, 0.6); }
+  100% { transform: scale(1); }
 }
 
-/* Lista de projetos individuais */
-.projects-list {
-  margin-top: 8px;
-  padding-right: 12px;
-  border-right: 2px solid rgba(1, 221, 118, 0.2);
-}
+body.dark-theme .donut-container { background: #1a1a2e; }
+body.dark-theme .progress-tooltip { background: #1a1a2e; border-color: #01dd76; }
+body.dark-theme .percentage, body.dark-theme .label, body.dark-theme .section-name { color: white; }
 
-.project-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4px 0;
-  margin-bottom: 2px;
-  font-size: 11px;
-}
-
-.project-info {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.project-icon {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: #ddd;
-  transition: all 0.2s ease;
-}
-
-.project-icon.explored {
-  background-color: rgb(1, 221, 118);
-  box-shadow: 0 0 6px rgba(1, 221, 118, 0.4);
-}
-
-.project-icon.unexplored {
-  background-color: rgba(0, 33, 105, 0.2);
-}
-
-.project-name {
-  color: rgb(0, 33, 105);
-  font-weight: 500;
-}
-
-.project-status {
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 10px;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.project-status.explored {
-  background-color: rgba(1, 221, 118, 0.15);
-  color: rgb(1, 221, 118);
-}
-
-.project-status.unexplored {
-  background-color: rgba(0, 33, 105, 0.1);
-  color: rgba(0, 33, 105, 0.6);
-}
-
-/* Lista de projetos individuais */
-.projects-list {
-  margin-top: 8px;
-  padding-right: 12px;
-  border-right: 2px solid rgba(1, 221, 118, 0.2);
-}
-
-.project-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4px 0;
-  margin-bottom: 2px;
-  font-size: 11px;
-}
-
-.project-info {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.project-icon {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: #ddd;
-  transition: all 0.2s ease;
-}
-
-.project-icon.explored {
-  background-color: rgb(1, 221, 118);
-  box-shadow: 0 0 6px rgba(1, 221, 118, 0.4);
-}
-
-.project-icon.unexplored {
-  background-color: rgba(0, 33, 105, 0.2);
-}
-
-.project-name {
-  color: rgb(0, 33, 105);
-  font-weight: 500;
-}
-
-.project-status {
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 10px;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.project-status.explored {
-  background-color: rgba(1, 221, 118, 0.15);
-  color: rgb(1, 221, 118);
-}
-
-.project-status.unexplored {
-  background-color: rgba(0, 33, 105, 0.1);
-  color: rgba(0, 33, 105, 0.6);
-}
-
-/* Responsividade */
+/* Mobile */
 @media (max-width: 768px) {
-  .progress-donut {
-    top: 100px;
-    right: 15px;
-  }
-
-  .donut-container {
-    width: 70px;
-    height: 70px;
-  }
-
-  .donut-chart {
-    width: 70px;
-    height: 70px;
-  }
-
-  .donut-background,
-  .donut-progress {
-    stroke-width: 6;
-  }
-
-  .percentage {
-    font-size: 16px;
-  }
-
-  .label {
-    font-size: 9px;
-  }
-
-  .progress-tooltip {
-    right: -50px;
-    min-width: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  .progress-donut {
-    top: 100px;
-    right: 10px;
-  }
-
-  .donut-container {
-    width: 60px;
-    height: 60px;
-  }
-
-  .donut-chart {
-    width: 60px;
-    height: 60px;
-  }
-
-  .donut-background,
-  .donut-progress {
-    stroke-width: 5;
-  }
-
-  .percentage {
-    font-size: 14px;
-  }
-
-  .label {
-    font-size: 8px;
-  }
-
-  .progress-tooltip {
-    right: -80px;
-    min-width: 180px;
-    padding: 12px;
-  }
-}
-
-/* Tema escuro */
-body.dark-theme .donut-container {
-  background: rgba(0, 33, 105, 0.95);
-}
-
-body.dark-theme .donut-progress {
-  stroke: rgb(1, 221, 118);
-}
-
-body.dark-theme .percentage,
-body.dark-theme .label,
-body.dark-theme .tooltip-content h4,
-body.dark-theme .section-name {
-  color: white;
-}
-
-body.dark-theme .progress-tooltip {
-  background: rgba(0, 33, 105, 0.98);
-  border: 1px solid rgba(1, 221, 118, 0.3);
-}
-
-body.dark-theme .section-item:hover {
-  background-color: rgba(1, 221, 118, 0.2);
-}
-
-body.dark-theme .section-progress {
-  color: rgb(1, 221, 118);
-}
-
-body.dark-theme .donut-background {
-  stroke: rgba(255, 255, 255, 0.1);
-}
-
-body.dark-theme .status-icon.locked {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-body.dark-theme .projects-list {
-  border-right-color: rgba(255, 255, 255, 0.1);
-}
-
-body.dark-theme .project-name {
-  color: white;
-}
-
-body.dark-theme .project-icon.unexplored {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-body.dark-theme .project-status.unexplored {
-  color: rgba(255, 255, 255, 0.2);
-}
-
-body.dark-theme .projects-list {
-  border-right-color: rgba(255, 255, 255, 0.1);
-}
-
-body.dark-theme .project-name {
-  color: white;
-}
-
-body.dark-theme .project-icon.unexplored {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-body.dark-theme .project-status.unexplored {
-  color: rgba(255, 255, 255, 0.2);
+  .progress-donut { top: auto; bottom: 20px; right: 20px; }
+  .progress-tooltip { right: 0; bottom: 110%; top: auto; transform: translateY(10px); }
+  .progress-donut:hover .progress-tooltip { transform: translateY(0); }
 }
