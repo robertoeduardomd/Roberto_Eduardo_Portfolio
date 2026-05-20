@@ -516,8 +516,12 @@ span{
 /*formacao:*/
 #form {
     padding-top: 100px;
-    border: 2px double brown;
+    border: 2px double rgb(1, 221, 118);
     background: linear-gradient(45deg, black, rgb(5, 56, 0));
+    background-image: url(../imgs/formacaoimgfundo3.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
     border-radius: 100px;
     display: flex;
     align-items: center;
@@ -528,7 +532,10 @@ span{
 }
 
 .formcor {
-    color: rgb(240, 255, 103);
+    color: rgb(255, 255, 255);
+      backdrop-filter: blur(10px);
+      padding: 5px;
+      border:20px;
 }
 
 #form p {
@@ -589,7 +596,8 @@ span{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    
+    backdrop-filter: blur(10px);
 }
 
 .escolaridade img {
