@@ -248,6 +248,11 @@ span{
 .tecnomb {
     margin-top: 0px;
     background: linear-gradient(45deg, black, rgb(0, 33, 105));
+    background-image: url(imgs/imgdefundohabilidades.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    backdrop-filter:blur(20px);
     width: 100%;
     display: flex;
     text-align: center;
@@ -258,7 +263,11 @@ span{
     cursor: url(../public/imgs/neonpointerhelp.cur), pointer;
 
 }
-
+.tecno p {
+    backdrop-filter:blur(20px);
+    padding: 10px;
+    border-radius:20px;
+}
 .tecnomb {
     display: none;
     padding-top: 40px;
@@ -323,6 +332,7 @@ span{
     padding: 10px;
     cursor: url(../public/imgs/neonpointer.cur), default;
     letter-spacing: 2px;
+    backdrop-filter:blur(30px);
 }
 
 .tecnop ul li:hover {
